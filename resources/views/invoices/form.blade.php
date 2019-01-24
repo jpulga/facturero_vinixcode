@@ -44,7 +44,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 campo-modificar">
                 <label>Document Type</label>
                 <select class="form-control" v-model="form.document_type">
                     <option value="NIT">Nit</option>
@@ -52,7 +52,7 @@
                 </select>
                 <p v-if="errors.document_type" class="error">@{{errors.document_type[0]}}</p>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 campo-modificar">
                 <label>Document Number</label>
                 <input type="tex" class="form-control" v-model="form.document_number">
                 <p v-if="errors.document_number" class="error">@{{errors.document_number[0]}}</p>

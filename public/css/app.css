@@ -137,3 +137,14 @@ body {
     max-width: 1300px;
 }
 
+.div-create{
+    padding: 8px;
+}
+
+.campo-modificar{
+    padding-top: 18px;
+}
+
+.buttom-create{
+    margin-left: 1020px;
+}
