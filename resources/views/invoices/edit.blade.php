@@ -4,17 +4,17 @@
     <div id="invoice">
         <div class="panel panel-default" v-clock>
             <div class="panel-heading">
-                <div class="clearfix">
-                    <span class="panel-title">Create Invoice</span>
+                <div class="clearfix div-create">
+                    <span class="panel-title">Update Invoice</span>
                     <a href="{{route('invoices.index')}}" class="btn btn-default pull-right">Back</a>
                 </div>
             </div>
             <div class="panel-body">
                 @include('invoices.form')
             </div>
-            <div class="panel-footer">
+            <div class="panel-footer div-create">
                 <a href="{{route('invoices.index')}}" class="btn btn-danger">Cancel</a>
-                <a href="{{route('invoices.index')}}" class="btn btn-warning" @click="update" :disabled="isProcessing">Update</a>
+                <a href="{{route('invoices.index')}}" class="btn btn-success" @click="update" :disabled="isProcessing">Update</a>
             </div>
         </div>
     </div>
