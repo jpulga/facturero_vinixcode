@@ -10,8 +10,10 @@
                 <label>Company Origin</label>
                 <input type="text" class="form-control" v-model="form.company_origin" value="Vinix Code S.A.S">
             </div>
-        </div>      
+        </div> 
+
         <br>  
+        
         <div class="form-group">
             <label>Client</label>
             <input type="text" class="form-control" v-model="form.client">
@@ -22,6 +24,7 @@
                 <label>Invoice Date</label>
                 <input type="date" class="form-control" v-model="form.date">
             </div>
+
             <div class="col-sm-6">
                 <label>Expiration Date</label>
                 <input type="date" class="form-control" v-model="form.expiration_date">
@@ -44,6 +47,7 @@
                     <option value="Cedula">Cédula</option>
                 </select>
             </div>
+
             <div class="col-sm-6 campo-modificar">
                 <label>Document Number</label>
                 <input type="tex" class="form-control" v-model="form.document_number">
@@ -57,6 +61,7 @@
                 <label>Cellphone</label>
                 <input type="text" class="form-control" v-model="form.cellphone">
             </div>
+
             <div class="col-sm-6">
                 <label>State</label>
                 <select class="form-control" v-model="form.state" name="state" value="hola">
@@ -66,7 +71,6 @@
             </div>
         </div>
         <br>
-
         <div class="form-group">
             <label>Address</label>
             <input type="text" class="form-control" v-model="form.address">

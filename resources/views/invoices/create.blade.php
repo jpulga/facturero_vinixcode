@@ -9,9 +9,11 @@
                 <a href="{{route('invoices.index')}}" class="btn btn-warning pull-right buttom-create">Back</a>
             </div>
         </div>
+
         <div class="panel-body">
             @include('invoices.form')
         </div>
+        
         <div class="panel-footer div-create">
             <a href="{{route('invoices.index')}}" class="btn btn-danger">Cancel</a>
             <a href="{{route('invoices.index')}}" class="btn btn-success" @click="create" :disabled="isProcessing">Create</a>

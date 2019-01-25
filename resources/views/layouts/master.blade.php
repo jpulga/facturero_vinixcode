@@ -14,16 +14,21 @@
             </div>
         </div>
     </nav>
+
     <br>
+    
     <div class="container container-principal">
         @yield('content')
     </div>
+    
     <br>
+    
     <div class="container">
         <footer class="footer">
             <p>&copy; 2018 Vinix Code S.A.S.</p>
         </footer>
     </div>
+    
     <br>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
