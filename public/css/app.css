@@ -148,3 +148,47 @@ body {
 .buttom-create{
     margin-left: 1020px;
 }
+.div-show{
+    padding: 8px;
+}
+.btn-show{
+    margin-left: 950px;
+}
+
+.img-uno{
+    margin-left: 40px;
+}
+
+.label-uno{
+    padding-left: 80px;
+}
+
+.label-dos{
+    padding-left: 92px;
+}
+
+.label-tres{
+    padding-left: 35px;
+}
+
+.label-cuatro{
+    padding-left: 110px;
+}
+
+.label-cinco{
+    padding-left: 70px;
+}
+
+.label-seis{
+    padding-left: 95px;
+}
+
+.firma{
+    margin-left: 570px;
+    font-weight: bold;
+}
+
+.firma2{
+    font-weight: bold;
+    text-align: center;
+}
