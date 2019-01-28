@@ -10,7 +10,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top nav-principal">
         <div class="container">
             <div class="navbar-header">
-                <a href="{{ route('invoices.index')}}"><img src="/svg/Vinix Code-02.png" alt="" width="10%"></a>
+                <a href="/"><img src="/svg/Vinix Code-02.png" alt="" width="10%"></a>
             </div>
         </div>
     </nav>
