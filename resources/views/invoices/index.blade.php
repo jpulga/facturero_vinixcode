@@ -12,7 +12,6 @@
         </form>
     </div>
 </nav>
-
 <br>
 
 <div class="container container-principal">
@@ -20,13 +19,13 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Invoice N.</th>              
-                <th>Client</th>
-                <th>Date</th>
-                <th>Exp. Date</th>
-                <th>Doc. Type</th>
-                <th>State</th>
-                <th>Grand Total</th>
+                <th>N° Factura</th>              
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Vencimiento de Fecha</th>
+                <th>Tipo de Documento</th>
+                <th>Estado</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
@@ -37,17 +36,17 @@
                 <td>{{$invoice->date}}</td>
                 <td>{{$invoice->expiration_date}}</td>
                 <td>{{$invoice->document_type}}</td>
-                <td>{{$invoice->state}}</td>
+                <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
                 <td class="text-right">
-                    <a href="{{route('invoices.show', $invoice)}}" class="btn btn-default btn-sm">View</a>
-                    <a href="{{route('invoices.edit', $invoice)}}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{route('invoices.show', $invoice)}}" class="btn btn-default btn-sm">Ver</a>
+                    <a href="{{route('invoices.edit', $invoice)}}" class="btn btn-primary btn-sm">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}" 
                         onsubmit="return confirm('Are you sure?')">
                         
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Borrar" class="btn btn-danger btn-sm">
                     </form>
                 </td>
             </tr>

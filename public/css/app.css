@@ -141,10 +141,6 @@ body {
     padding: 8px;
 }
 
-.campo-modificar{
-    padding-top: 18px;
-}
-
 .buttom-create{
     margin-left: 1020px;
 }
@@ -191,4 +187,16 @@ body {
 .firma2{
     font-weight: bold;
     text-align: center;
+}
+
+.green {
+    color: #1e7e34;
+}
+
+.red {
+    color: #bd2130;
+}
+
+.label-show{
+    font-weight: bold;
 }

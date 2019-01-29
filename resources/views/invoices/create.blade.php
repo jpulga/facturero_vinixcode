@@ -5,8 +5,8 @@
     <div class="panel panel-default" v-clock>
         <div class="panel-heading">
             <div class="clearfix div-create">
-                <span class="panel-title">Create Invoice</span>
-                <a href="{{route('invoices.index')}}" class="btn btn-warning pull-right buttom-create">Back</a>
+                <span class="panel-title">Crear Factura</span>
+                <a href="{{route('invoices.index')}}" class="btn btn-warning pull-right buttom-create">Volver</a>
             </div>
         </div>
 
@@ -15,8 +15,8 @@
         </div>
         
         <div class="panel-footer div-create">
-            <a href="{{route('invoices.index')}}" class="btn btn-danger">Cancel</a>
-            <a href="{{route('invoices.index')}}" class="btn btn-success" @click="create" :disabled="isProcessing">Create</a>
+            <a href="{{route('invoices.index')}}" class="btn btn-danger">Cancelar</a>
+            <a href="{{route('invoices.index')}}" class="btn btn-success" @click="create" :disabled="isProcessing">Crear</a>
         </div>
     </div>
 </div>

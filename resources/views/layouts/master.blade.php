@@ -25,7 +25,7 @@
     
     <div class="container">
         <footer class="footer">
-            <p>&copy; 2018 Vinix Code S.A.S.</p>
+            <p>&copy; <?php echo date('Y'); ?> Vinix Code S.A.S. </p>
         </footer>
     </div>
     

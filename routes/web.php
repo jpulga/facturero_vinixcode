@@ -18,4 +18,3 @@ Route::resource('cash_receipts', 'CashReceiptController');
 
 Route::resource('invoices', 'InvoiceController'); 
 
-Route::get('invoices.form', 'ContarFacturasController@index');

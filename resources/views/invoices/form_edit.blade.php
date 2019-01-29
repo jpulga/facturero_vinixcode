@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <label>N° de Factura</label>
-                <input type="text" class="form-control" v-model="form.invoice_number" value="{{ $count+1 }}">
+                <input type="text" class="form-control" v-model="form.invoice_number">
             </div>
 
             <div class="col-sm-6">
@@ -34,11 +34,11 @@
     <div class="col-sm-4">
         <div class="form-group">
             <label>Notas</label>
-            <textarea class="form-control" v-model="form.notes"></textarea>
+            <textarea class="form-control campo-modificar" v-model="form.notes"></textarea>
         </div>
 
         <div class="row">
-            <div class="col-sm-6 campo-modificar">
+            <div class="col-sm-6">
                 <label>Tipo de Documento</label>
                 <select class="form-control" v-model="form.document_type">
                     <option value="NIT">Nit</option>
@@ -46,7 +46,7 @@
                 </select>
             </div>
 
-            <div class="col-sm-6 campo-modificar">
+            <div class="col-sm-6">
                 <label>Numero de Documento</label>
                 <input type="tex" class="form-control" v-model="form.document_number">
             </div>

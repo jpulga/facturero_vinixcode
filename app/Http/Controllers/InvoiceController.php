@@ -20,7 +20,8 @@ class InvoiceController extends Controller
 
     public function create()
     {
-        return view('invoices.create');
+        $count = \DB::table('invoices')->select('invoice_number')->limit(1)->orderBy('invoice_number', 'desc')->value('invoice_number');
+        return view('invoices.create', compact('count'));
     }
 
     public function store(Request $request)

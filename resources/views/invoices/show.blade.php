@@ -16,6 +16,7 @@
                     </form>
             </div>
         </div>
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-4">
@@ -31,64 +32,72 @@
                         <label class="label-seis">NIT:901116567</label>
                     </div>
                 </div>
+
                 <div class="col-sm-4">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">N° Invoice:</label>
+                            <label class="label-show">N° de Factura</label>
                             <p>{{$invoice->invoice_number}}</p>
                         </div>
+
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Client:</label>
+                            <label class="label-show">Cliente:</label>
                             <p>{{$invoice->client}}</p>
                         </div>
+
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Address:</label>
+                            <label class="label-show">Direccion:</label>
                             <p>{{$invoice->address}}</p>
                         </div>
+
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Cellphone:</label>
+                            <label class="label-show">Telefono:</label>
                             <p>{{$invoice->cellphone}}</p>
-                        </div>
-                    
+                        </div> 
                     </div>
 
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="col-sm-12">
-                                <label style="font-weight: bold;">Notes:</label>
+                                <label style="font-weight: bold;">Notas:</label>
                                 <p>{{$invoice->notes}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-sm-4">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Invoice Date:</label>
+                            <label style="font-weight: bold;">Fecha de Factura:</label>
                             <p>{{$invoice->date}}</p>
                         </div>
+
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Expiration Date:</label>
+                            <label style="font-weight: bold;">Vencimiento de Factura:</label>
                             <p>{{$invoice->expiration_date}}</p>
                         </div>
+
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Document Type:</label>
+                            <label style="font-weight: bold;">Tipo de Documento:</label>
                             <p>{{$invoice->document_type}}</p>
                         </div>
+                        
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Document Number:</label>
+                            <label style="font-weight: bold;">Numero de Documento:</label>
                             <p>{{$invoice->document_number}}</p>
                         </div> 
                     </div>
                 </div>
             </div>
             <hr>
+
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                        <th>Qty</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -110,12 +119,12 @@
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
-                        <td class="table-label">Discount</td>
+                        <td class="table-label">Descuento</td>
                         <td class="table-amount">$ {{$invoice->discount}}</td>
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
-                        <td class="table-label">Grand Total</td>
+                        <td class="table-label">Total a Pagar</td>
                         <td class="table-amount">$ {{ number_format ($invoice->grand_total)}}</td>
                     </tr>
                 </tfoot>

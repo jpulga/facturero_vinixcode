@@ -38,7 +38,7 @@
                 <td>{{$cash_receipt->document_number}}</td>
                 <td>{{$cash_receipt->date}}</td>
                 <td>{{ number_format ($cash_receipt->value)}}</td>
-                <td>$ {{$cash_receipt->description}}</td>
+                <td>{{$cash_receipt->description}}</td>
                 <td class="text-right">
                     <a href="{{route('cash_receipts.show', $cash_receipt)}}" class="btn btn-default btn-sm">View</a>
                     <a href="{{route('cash_receipts.edit', $cash_receipt)}}" class="btn btn-primary btn-sm">Edit</a>
