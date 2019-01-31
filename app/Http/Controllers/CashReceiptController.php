@@ -27,7 +27,7 @@ class CashReceiptController extends Controller
      */
     public function create()
     {
-        //
+        return view('cash_receipts.create');
     }
 
     /**
@@ -38,7 +38,22 @@ class CashReceiptController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'box_number' => 'required|alpha_dash|unique:invoices',
+            'we_received' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'document_type' => 'required|max:255',
+            'document_number' => 'required|numeric|min:0',
+            'date' => 'required|date_format:Y-m-d',
+            'value' => 'required|numeric|min:0',
+            'value_in_letters' => 'required|numeric|min:0',
+            'description' => 'required|max:1000',
+        ]);
+
+        CashReceipt::create($request->all());
+        return redirect()->route('cash_receipts.index')
+                         ->with('success','new biodata created successfully');
     }
 
     /**

@@ -39,7 +39,7 @@
 
         <div class="row">
             <div class="col-sm-6 campo-modificar">
-                <label>Tipo de Documento</label>
+            <label>Tipo de Documento</label>
                 <select class="form-control" v-model="form.document_type">
                     <option value="NIT">Nit</option>
                     <option value="Cedula">Cédula</option>

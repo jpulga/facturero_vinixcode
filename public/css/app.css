@@ -144,9 +144,15 @@ body {
 .buttom-create{
     margin-left: 1020px;
 }
+
+.buttom-cash-create{
+    margin-left: 970px;
+}
+
 .div-show{
     padding: 8px;
 }
+
 .btn-show{
     margin-left: 950px;
 }

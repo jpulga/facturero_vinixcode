@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
         
         <form class="form-inline my-2 my-lg-0">
-            <a href="{{route('invoices.create')}}" class="btn btn-success my-2 my-sm-0">Create</a>
+            <a href="{{route('cash_receipts.create')}}" class="btn btn-success my-2 my-sm-0">Create</a>
         </form>
     </div>
 </nav>
