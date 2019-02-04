@@ -143,7 +143,6 @@ class InvoiceController extends Controller
 
         $invoice->delete();
 
-        return redirect()
-            ->route('invoices.index');
-    }
+        return back()->with('info', 'La Factura fue eliminada');
+   }
 }

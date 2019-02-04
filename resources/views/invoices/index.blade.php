@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+
+<div class="col-sm-12">
+    @include('invoices.fragment.aside')
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light nav-invoice" >
     <a class="navbar-brand" href="#">Todas las Facturas</a>
 
@@ -8,12 +13,12 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
         
         <form class="form-inline my-2 my-lg-0">
-            <a href="{{route('invoices.create')}}" class="btn btn-success my-2 my-sm-0">Crear</a>
+            <a href="{{ route('invoices.create') }}" class="btn btn-success my-2 my-sm-0">Crear</a>
         </form>
     </div>
 </nav>
 <br>
-
+@include('invoices.fragment.info')
 <div class="container container-principal">
     @if($invoices->count())
     <table class="table table-hover">
@@ -39,11 +44,9 @@
                 <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
                 <td class="text-right">
-                    <a href="{{route('invoices.show', $invoice)}}" class="btn btn-default btn-sm">Ver</a>
-                    <a href="{{route('invoices.edit', $invoice)}}" class="btn btn-primary btn-sm">Editar</a>
-                    <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}" 
-                        onsubmit="return confirm('Are you sure?')">
-                        
+                    <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-default btn-sm">Ver</a>
+                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-primary btn-sm">Editar</a>
+                    <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="submit" value="Borrar" class="btn btn-danger btn-sm">

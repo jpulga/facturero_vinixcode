@@ -5,8 +5,8 @@
         <div class="panel-heading">
             <div class="clearfix div-show">
                 <span class="panel-title">Factura</span>
-                    <a href="{{route('invoices.index')}}" class="btn btn-warning btn-show">Volver</a>
-                    <a href="{{route('invoices.edit', $invoice)}}" class="btn btn-primary ">Editar</a>
+                    <a href="{{ route('invoices.index') }}" class="btn btn-warning btn-show">Volver</a>
+                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-primary ">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
                           onsubmit="return confirm('Are you sure?')">
 
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <p><img src="/svg/Vinix Code-02.png" alt="" width="52%" class="img-uno"></p>
+                        <p><img src="/svg/Vinix Code-01.png" alt="" width="52%" class="img-uno"></p>
                     </div>
                     <div class="form-group">
                         <label class="label-uno">www.vinixcode.com</label><br>

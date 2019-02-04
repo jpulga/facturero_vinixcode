@@ -21,13 +21,13 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Facturero Vinix Code
+                    Facturero Vinix Code S.A.S
                 </div>
 
                 <div class="links">
-                    <a href="{{route('invoices.index')}}">Invoices</a>
-                    <a href="{{route('cash_receipts.index')}}">Cash Receipts</a>
-                    <a href="https://laravel-news.com">Cash Receipt</a>
+                    <a href="{{ route('invoices.index') }}">Facturas</a>
+                    <a href="{{ route('cash_receipts.index') }}">Recibos de Caja</a>
+                    <a href="https://laravel-news.com">Egresos</a>
                 </div>
             </div>
         </div>

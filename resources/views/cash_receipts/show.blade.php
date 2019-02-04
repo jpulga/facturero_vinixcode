@@ -1,98 +1,112 @@
 @extends('layouts.master')
 
 @section('content')
-<div align="center">
-    <h1>Recibo de caja</h1>
-  <table width="900" border="2">
-    <tr border="2">
-      <td class="cuatro" align="center" width="300">
-        <strong>Vinix Code S.A.S.</strong>
-      </td>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="clearfix div-show">
+                <span class="panel-title">Recibo de Caja</span>
+                    <a href="{{ route('cash_receipts.index') }}" class="btn btn-warning btn-cash">Volver</a>
+                    <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-primary">Editar</a>
+                    <form class="form-inline" method="post" action="{{route('cash_receipts.destroy', $cash_receipt->id) }}" 
+                        onsubmit="return confirm('Are you sure?')">
+                        
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="submit" value="Borrar" class="btn btn-danger">
+                    </form> 
+            </div>
+        </div>
 
-      <td class="cuatro" align="center" width="300">
-        <strong>Nit: </strong>901116567
-      </td>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <p><img src="/svg/Vinix Code-01.png" alt="" width="52%" class="img-uno"></p>
+                    </div>
 
-      <td class="cuatro" align="center" width="300">
-        <strong>Recibo de caja N°:</strong>
-        {{$cash_receipt->box_number}}
-      </td>
-    </tr>
-  </table>
+                    <div class="form-group">
+                        <label class="label-uno">www.vinixcode.com</label><br>
+                        <label class="label-tres">Calle 87 Sur # 55-695, Apto. 1603</label><br>
+                        <label class="label-cuatro">N° 055460</label><br>
+                        <label class="label-cinco">La Estrella, Antioquia</label><br>
+                        <label class="label-seis">NIT: 901116567</label>
+                    </div>
+                </div>
 
-  <br>
-  <table width="900" border="2">
-    <tr>
-      <td class="ojo" width="500">
-        <strong>Recibimos de:</strong>
-        {{ $cash_receipt->we_received }}
-      </td>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="label-show">N° Recibo de Caja</label>
+                            <p>{{$cash_receipt->box_number}}</p>
+                        </div>
 
-      <td class="ojo" width="400">
-        <strong>Direccion:</strong>
-        {{ $cash_receipt->address }}
-      </td>
+                        <div class="col-sm-6">
+                            <label class="label-show">Recibimos</label>
+                            <p>{{ $cash_receipt->we_received }}</p>
+                        </div>
 
-      <td class="ojo" width="700">
-        <strong>Fecha:</strong>
-        {{ $cash_receipt->date }}
-      </td> 
-    </tr>
+                        <div class="col-sm-6">
+                            <label class="label-show">Ciudad</label>
+                            <p>{{ $cash_receipt->city }}</p>
+                        </div>
 
-    <tr>
-      <td class="ojo">
-      	<strong>Nit:</strong>{{ $cash_receipt->document_type }}
-          {{ $cash_receipt->document_number }}
-      </td>
+                        <div class="col-sm-6">
+                            <label class="label-show">Fecha</label>
+                            <p>{{ $cash_receipt->date }}</p>
+                        </div> 
 
-      <td class="ojo">
-        <strong>Ciudad:</strong>
-        {{ $cash_receipt->city }}
-      </td>
+                        <div class="col-sm-6">
+                            <label class="label-show">Tipo de Documento</label>
+                            <p>{{ $cash_receipt->document_type }}</p>
+                        </div> 
 
-      <td class="ojo">
-        <strong>Valor en  letras:</strong>
-        {{ $cash_receipt->value_in_letters }}
-      </td>
-    </tr>
-  </table>
+                        <div class="col-sm-6">
+                            <label class="label-show">Numero de Documento</label>
+                            <p>{{ $cash_receipt->document_number }}</p>
+                        </div> 
 
-  <br>
-  <table width="900" border="2">
+                        <div class="col-sm-6">
+                            <label class="label-show">Valor</label>
+                            <p>{{ $cash_receipt->value }}</p>
+                        </div> 
 
-    <tr>
-      <td align="center" width="700">
-        <strong>Descripcion</strong> 
-      </td>
+                        <div class="col-sm-6">
+                            <label class="label-show">Valor en Letras</label>
+                            <p>{{ $cash_receipt->value_in_letters }}</p>
+                        </div> 
 
-      <td align="center" width="200">
-        <strong>Valor</strong>
-      </td>
-    </tr>
+                        <div class="col-sm-6">
+                            <label class="label-show">Direccion</label>
+                            <p>{{ $cash_receipt->address }}</p>
+                        </div>
+                    </div>
 
-    <tr>
-      <td class="uno" height="400" align="center">{{ $cash_receipt->description }}</td>
-      <td class="uno" height="400" align="center">$ {{ $cash_receipt->value }}</td>
-    </tr>
-  </table>
-  
-  <br>
-  <table width="900" border="2">
-    <tr>
-      <td class="dos" align="center" width="450" height="50">
-        <strong>Elaboro</strong>
-      </td>
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label style="font-weight: bold;">Descripcion:</label>
+                                <p>{{ $cash_receipt->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+ 
+            <div class="row show-cash">
+                <div class="col-sm-6">
+                    <label class="label-show">Elaboro</label>
+                </div>
 
-      <td class="dos" align="center" width="450" height="50">
-        <strong>Firma Y Sello</strong>
-      </td>
-    </tr>   
-  </table>
-  <br>
-  <strong>Vinix Code S.A.S<br>
-  Calle 87 Sur # 55-695, Apto. 1603<br>
-  055460, La Estrella, Antioquia<br>
-  Colombia<br>
-  www.vinixcode.com</strong>
-  </div>
+                <div class="col-sm-6">
+                    <label class="label-show">Firma y Sello</label>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        @include('cash_receipts.fragment.aside')
+    </div>
 @endsection
+
+            

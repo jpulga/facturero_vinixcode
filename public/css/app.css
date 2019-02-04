@@ -154,7 +154,11 @@ body {
 }
 
 .btn-show{
-    margin-left: 1030px;
+    margin-left: 1120px;
+}
+
+.btn-cash{
+    margin-left: 1040px;
 }
 
 .img-uno{
@@ -206,3 +210,9 @@ body {
 .label-show{
     font-weight: bold;
 }
+
+.show-cash{
+    margin-left: 350px;
+    margin-top: 120px;
+}
+

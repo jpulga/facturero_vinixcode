@@ -6,7 +6,7 @@
             <div class="panel-heading">
                 <div class="clearfix div-create">
                     <span class="panel-title">Editar Factura</span>
-                    <a href="{{route('invoices.index')}}" class="btn btn-default pull-right">Volver</a>
+                    <a href="{{ route('invoices.index') }}" class="btn btn-default pull-right">Volver</a>
                 </div>
             </div>
 
@@ -15,8 +15,8 @@
             </div>
             
             <div class="panel-footer div-create">
-                <a href="{{route('invoices.index')}}" class="btn btn-danger">Cancelar</a>
-                <a href="{{route('invoices.index')}}" class="btn btn-success" @click="update" :disabled="isProcessing">Actualizar</a>
+                <a href="{{ route('invoices.index') }}" class="btn btn-danger">Cancelar</a>
+                <a href="{{ route('invoices.index') }}" class="btn btn-success" @click="update" :disabled="isProcessing">Actualizar</a>
             </div>
         </div>
     </div>
