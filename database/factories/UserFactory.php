@@ -22,3 +22,18 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\CashReceipt::class, function (Faker $faker) {
+    return [
+        'box_number' => $faker->numberBetween(10000, 40000),
+        'we_received' => $faker->name(10),
+        'address' => $faker->address,
+        'city' => $faker->text(10),
+        'document_type' => $faker->text(5),
+        'document_number' => $faker->numberBetween(10000, 40000),
+        'date' => $faker->date(),
+        'value' => $faker->numberBetween(10000, 40000),
+        'value_in_letters' => $faker->text(10),
+        'description' => $faker->text(50) 
+    ];
+});

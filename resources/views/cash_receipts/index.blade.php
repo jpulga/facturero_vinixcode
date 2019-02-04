@@ -40,7 +40,7 @@
                 <td>{{ number_format ($cash_receipt->value)}}</td>
                 <td>{{$cash_receipt->description}}</td>
                 <td class="text-right">
-                    <a href="{{route('cash_receipts.show', $cash_receipt)}}" class="btn btn-default btn-sm">View</a>
+                    <a href="{{ route('cash_receipts.show', $cash_receipt->id) }}" class="btn btn-default btn-sm">View</a>
                     <a href="{{route('cash_receipts.edit', $cash_receipt)}}" class="btn btn-primary btn-sm">Edit</a>
                     <form class="form-inline" method="post" action="{{route('cash_receipts.destroy', $cash_receipt)}}" 
                         onsubmit="return confirm('Are you sure?')">
@@ -59,7 +59,7 @@
     <div class="cash_receipt-empty">
         <p class="cash_receipt-empty-title">
             No Cash Receipts were created.
-            <a href="{{route('invoices.create')}}">Create Now!</a>
+            <a href="{{route('cash_receipts.create')}}">Create Now!</a>
         </p>
     </div>
     @endif
