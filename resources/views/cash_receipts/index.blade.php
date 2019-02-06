@@ -59,7 +59,7 @@
     {!! $cash_receipts->render() !!}
     @else
     <div class="cash_receipt-empty">
-        <p class="cash_receipt-empty-title">
+        <p class="cash_receipt-empty-title text-center">
             No Cash Receipts were created.
             <a href="{{ route('cash_receipts.create') }}">Create Now!</a>
         </p>

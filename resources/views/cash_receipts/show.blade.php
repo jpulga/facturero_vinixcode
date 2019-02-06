@@ -104,9 +104,6 @@
             <hr>
         </div>
     </div>
-    <div class="col-sm-4">
-        @include('cash_receipts.fragment.aside')
-    </div>
 @endsection
 
             

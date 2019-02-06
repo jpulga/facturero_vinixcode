@@ -13,7 +13,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::orderBy('created_at', 'asc')
-            ->paginate(15);
+            ->paginate(20);
 
         return view('invoices.index', compact('invoices'));
     }
@@ -28,7 +28,6 @@ class InvoiceController extends Controller
     {
         $this->validate($request, [
             'invoice_number' => 'required|alpha_dash|unique:invoices',
-            'company_origin' => 'required|max:255',
             'client' => 'required|max:255',
             'date' => 'required|date_format:Y-m-d',
             'expiration_date' => 'required|date_format:Y-m-d',
