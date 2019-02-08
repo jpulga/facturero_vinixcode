@@ -10,9 +10,9 @@ use App\InvoiceProduct;
 
 class InvoiceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $invoices = Invoice::orderBy('created_at', 'asc')
+        $invoices = Invoice::client($request->get('cliente'))->orderBy('created_at', 'asc')
             ->paginate(20);
 
         return view('invoices.index', compact('invoices'));

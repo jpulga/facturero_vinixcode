@@ -2,20 +2,15 @@
 
 @section('content')
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light nav-invoice" >
-    <a class="navbar-brand" href="#">Facturas</a>
-
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-
-        <form class="form-inline my-2 my-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0 uno">Crear</a>
-        </form>
-
-    </div>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Facturas</a>
+    {!! Form::open(['route' => 'invoices.index', 'method' => 'GET', 'class' => 'form-inline', 'role' => 'search']) !!}
+        {!! Form::text('cliente', null, ['class' => 'form-control mr-sm-2', 'placeholder' => 'Buscar']) !!}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0 uno">Crear</a>
+    {!! Form::close() !!}
 </nav>
+
 <br>
 @include('invoices.fragment.info')
 <div class="container container-principal">
@@ -41,13 +36,13 @@
                 <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
                 <td class="text-right">
-                    <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-default btn-sm">Ver</a>
-                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm">Ver</a>
+                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
                                 onsubmit="return confirm('Estas seguro que deseas borrar esta Factura?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Borrar" class="btn btn-danger btn-sm">
+                        <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">
                     </form>
                 </td>
             </tr>

@@ -15,4 +15,11 @@ class Invoice extends Model
     public function products(){
         return $this->hasMany(InvoiceProduct::class);
     }
+
+    public function scopeClient($query, $client)
+    {   
+        if (trim($client) != "") {
+            $query->where('client', "LIKE", "%$client%");
+        }
+    }    
 }

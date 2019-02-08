@@ -5,14 +5,14 @@
         <div class="panel-heading">
             <div class="clearfix div-show">
                 <span class="panel-title">Factura</span>
-                    <a href="{{ route('invoices.index') }}" class="btn btn-warning btn-show">Volver</a>
-                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-primary ">Editar</a>
+                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning btn-show">Volver</a>
+                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary ">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
                           onsubmit="return confirm('Are you sure?')">
 
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Borrar" class="btn btn-danger">
+                        <input type="submit" value="Borrar" class="btn btn-outline-danger">
                     </form>
             </div>
         </div>
