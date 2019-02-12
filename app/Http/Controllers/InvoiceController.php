@@ -12,7 +12,7 @@ class InvoiceController extends Controller
 {
     public function index(Request $request)
     {
-        $invoices = Invoice::client($request->get('cliente'))->orderBy('created_at', 'asc')
+        $invoices = Invoice::client($request->get('cliente'))->orderBy('created_at', 'desc')
             ->paginate(20);
 
         return view('invoices.index', compact('invoices'));
@@ -142,6 +142,6 @@ class InvoiceController extends Controller
 
         $invoice->delete();
 
-        return back()->with('info', 'La Factura fue eliminada');
+        return back()->with('info', 'La factura fue eliminada.');
    }
 }

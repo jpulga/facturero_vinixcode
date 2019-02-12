@@ -39,7 +39,7 @@
                     <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm">Ver</a>
                     <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
-                                onsubmit="return confirm('Estas seguro que deseas borrar esta Factura?')">
+                                onsubmit="return confirm('Estas seguro que deseas borrar esta factura N° {{$invoice->invoice_number}}')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">

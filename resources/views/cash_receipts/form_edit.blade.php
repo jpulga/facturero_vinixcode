@@ -1,66 +1,75 @@
-<div class="row">
-    <div class="col-sm-4">
+<form action="{{ route('cash_receipts.update', $cash_receipt->id) }}" method="POST">
+   
+    @csrf
+    @method('PUT')
+
+    <div class="col-sm-12">
         <div class="row form-cash">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label>N° Recibo de Caja</label>
-                <input type="text" class="form-control" v-model="form.box_number">
+                <input type="text" class="form-control" name="box_number" value="{{ $cash_receipt->box_number }}">
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label>Fecha</label>
-                <input type="text" class="form-control" v-model="form.date" value="<?= date('Y-m-d') ?>">
+                <input type="text" class="form-control" name="date" value="<?= date('Y-m-d') ?>">
+            </div>
+
+            <div class="col-sm-3">
+                <label>Recibimos</label>
+                <input type="text" class="form-control" name="we_received" value="{{ $cash_receipt->we_received }}">
+            </div>
+
+            <div class="col-sm-3">
+                <label>Direccion</label>
+                <input type="text" class="form-control" name="address" value="{{ $cash_receipt->address }}">
             </div>
         </div> 
-        
-        <div class="form-group">
-            <label>Recibimos</label>
-            <input type="text" class="form-control" v-model="form.we_received">
-        </div>
 
-        <div class="form-group">
-            <label>Direccion</label>
-            <input type="text" class="form-control" v-model="form.address">
-        </div>
+        <div class="row form-cash">
+            <div class="col-sm-4">             
+                <label>Tipo de Documento</label>
+                <select class="form-control" name="document_type">
+                    <option value="{{ $cash_receipt->document_type }}">Nit</option>
+                    <option value="{{ $cash_receipt->document_type }}">Cédula</option>
+                </select>
+            </div>
+
+            <div class="col-sm-4">
+                <label>Numero de Documento</label>
+                <input type="text" class="form-control" name="document_number" value="{{ $cash_receipt->document_number }}">
+            </div>
+
+            <div class="col-sm-4">
+                <label>Ciudad</label>
+                <input type="text" class="form-control" name="city" value="{{ $cash_receipt->city }}">
+            </div>
+        </div> 
+
+        <div class="row form-cash">
+            <div class="col-sm-6">             
+                <label>Valor</label>
+                <input type="text" class="form-control" name="value" value="{{ $cash_receipt->value }}">
+            </div>
+
+            <div class="col-sm-6">
+                <label>Valor en Letras</label>
+                <input type="text" class="form-control" name="value_in_letters" value="{{ $cash_receipt->value_in_letters }}">
+            </div>
+        </div> 
     </div>
     
-    <div class="col-sm-4">
+    <div class="col-sm-12">
         <div class="form-group">
             <label>Descripcion</label>
-            <textarea class="form-control form-cash" v-model="form.description"></textarea>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 campo-modificar">
-                <label>Valor</label>
-                <input type="tex" class="form-control" v-model="form.value">
-            </div>
-
-            <div class="col-sm-6 campo-modificar">
-                <label>Valor en Letras</label>
-                <input type="tex" class="form-control" v-model="form.value_in_letters">
-            </div>
-        </div>
+            <textarea class="form-control" name="description">{{ $cash_receipt->description }}</textarea>
+        </div>     
     </div>
 
-    <div class="col-sm-4">
-        <div class="form-group">
-        <label>Tipo de Documento</label>
-            <select class="form-control" v-model="form.document_type">
-                <option value="NIT">Nit</option>
-                <option value="Cedula">Cédula</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Numero de Documento</label>
-            <input type="text" class="form-control" v-model="form.document_number">
-        </div>
-
-         <div class="form-group">
-            <label>Ciudad</label>
-            <input type="text" class="form-control" v-model="form.city">
-        </div>             
+    <div class="panel-footer div-create">
+        <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-danger">Cancelar</a>
+        <button type="submit" class="btn btn-outline-success">Actualizar</button>
     </div>
-</div>
+</form>
 
 

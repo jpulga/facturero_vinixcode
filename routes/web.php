@@ -18,3 +18,4 @@ Route::resource('cash_receipts', 'CashReceiptController');
 
 Route::resource('invoices', 'InvoiceController'); 
 
+

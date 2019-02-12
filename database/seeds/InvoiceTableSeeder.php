@@ -19,7 +19,7 @@ class InvoiceTableSeeder extends Seeder
         Invoice::truncate();
         InvoiceProduct::truncate();
 
-        foreach(range(1, 80) as $i){
+        foreach(range(1, 100) as $i){
             $products = collect();
 
             foreach(range(1, mt_rand(2, 10)) as $i){

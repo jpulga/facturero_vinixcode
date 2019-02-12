@@ -6,7 +6,7 @@
         <div class="panel-heading">
             <div class="clearfix div-create">
                 <span class="panel-title">Crear Recibo Caja</span>
-                <a href="{{ route('cash_receipts.index') }}" class="btn btn-warning pull-right buttom-cash-create">Volver</a>
+                <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-warning pull-right buttom-cash-create">Volver</a>
             </div>
         </div>
 
