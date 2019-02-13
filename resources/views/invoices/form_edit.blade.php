@@ -1,88 +1,74 @@
-<div class="row">
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-6">
-                <label>N° de Factura</label>
-                <input type="text" class="form-control" v-model="form.invoice_number">
-            </div>
-
-            <div class="col-sm-6">
-                <label>Compañia de Origen</label>
-                <input type="text" class="form-control" v-model="form.company_origin" value="Vinix Code S.A.S">
-            </div>
-        </div> 
-        <br>  
-        
-        <div class="form-group">
-            <label>Cliente</label>
-            <input type="text" class="form-control" v-model="form.client">
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <label>Fecha de Factura</label>
-                <input type="text" class="form-control" v-model="form.date" value="<?= date('Y-m-d') ?>">
-            </div>
-
-            <div class="col-sm-6">
-                <label>Vencimiento de Factura</label>
-                <input type="date" class="form-control" v-model="form.expiration_date">
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label>Notas</label>
-            <textarea class="form-control campo-modificar" v-model="form.notes"></textarea>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <label>Tipo de Documento</label>
-                <select class="form-control" v-model="form.document_type">
-                    <option value="NIT">Nit</option>
-                    <option value="Cedula">Cédula</option>
-                </select>
-            </div>
-
-            <div class="col-sm-6">
-                <label>Numero de Documento</label>
-                <input type="tex" class="form-control" v-model="form.document_number">
-            </div>
-        </div>
+<div class="form-row">
+    <div class="form-group col-md-2">
+        <label>N° de Factura</label>
+        <input type="text" class="form-control" v-model="form.invoice_number">
     </div>
 
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-sm-6">
-                <label>Telefono</label>
-                <input type="text" class="form-control" v-model="form.cellphone">
-            </div>
-
-            <div class="col-sm-6">
-                <label>Estado</label>
-                <select class="form-control" v-model="form.state" name="state" value="hola">
-                    <option value="Debe">Debe</option>
-                    <option value="Paga">Paga</option>
-                </select>
-            </div>
-        </div>
-        <br>
-
-        <div class="form-group">
-            <label>Direccion</label>
-            <input type="text" class="form-control" v-model="form.address">
-        </div>
-
-        <div class="form-group">
-            <label>Moneda</label>
-            <select class="form-control" v-model="form.currency" name="currency">
-                <option value="USD">USD (Dolares Americanos)</option>
-                <option value="COP">COP (Pesos Colombianos)</option>
-            </select>
-        </div>        
+    <div class="form-group col-md-2">
+        <label>Cliente</label>
+        <input type="text" class="form-control" v-model="form.client">
     </div>
+
+    <div class="form-group col-md-2">
+        <label>Fecha</label>
+        <input type="date" class="form-control" v-model="form.date" value="<?= date('Y-m-d') ?>">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label>Fecha de Vencimiento</label>
+        <input type="date" class="form-control" v-model="form.expiration_date">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label>Tipo de Documento</label>
+        <select class="form-control" v-model="form.document_type">
+            <option value="NIT">Nit</option>
+            <option value="Cedula">Cédula</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-2">
+        <label>Numero de Documento</label>
+        <input type="text" class="form-control" v-model="form.document_number">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <label>Direccion</label>
+        <input type="text" class="form-control" v-model="form.address">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Telefono</label>
+        <input type="text" class="form-control" v-model="form.cellphone">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Moneda</label>
+        <select class="form-control" v-model="form.currency">
+            <option value="USD">USD (Dolares Americanos)</option>
+            <option value="COP">COP (Pesos Colombianos)</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Estado</label>
+        <select class="form-control" v-model="form.state" name="state">
+            <option value="Debe">Debe</option>
+            <option value="Paga">Paga</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-3" hidden>
+        <label>Compañia de Origen</label>
+        <input type="text" class="form-control" v-model="form.company_origin" value="Vinix Code S.A.S">
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="text-center">Notas</label>
+    <textarea class="form-control" v-model="form.notes"></textarea>
 </div>
 <hr>
 

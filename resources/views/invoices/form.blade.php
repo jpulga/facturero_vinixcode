@@ -56,7 +56,7 @@
         <label>Estado</label>
         <select class="form-control" v-model="form.state">
             <option value="Debe">Debe</option>
-            <option value="Pago">Pago</option>
+            <option value="Paga">Paga</option>
         </select>
     </div>
 

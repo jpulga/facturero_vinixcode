@@ -7,10 +7,15 @@
     {!! Form::open(['route' => 'invoices.index', 'method' => 'GET', 'class' => 'form-inline', 'role' => 'search']) !!}
         {!! Form::text('cliente', null, ['class' => 'form-control mr-sm-2', 'placeholder' => 'Buscar']) !!}
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0 uno">Crear</a>
+        <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0">Crear</a>
     {!! Form::close() !!}
 </nav>
-
+<br>
+@if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+@endif
 <br>
 @include('invoices.fragment.info')
 <div class="container container-principal">

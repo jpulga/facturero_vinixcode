@@ -129,21 +129,74 @@ body {
     background: black;
 }
 
-.nav-invoice{
-    border-radius: 10px; 
-}
-
 .container-principal{
     max-width: 1730px;
 }
 
-.div-create{
+/*INVOICES*/
+
+.btn-show-invoices{
+    margin-left: 1360px;
+}
+
+.div-show-invoices{
     padding: 8px;
 }
 
-.buttom-create{
-    margin-left: 1200px;
+.div-create-invoices{
+    padding: 8px;
 }
+
+.div-edit-invoices{
+    padding: 8px;
+}
+
+.buttom-create-invoices{
+    margin-left: 1435px;
+}
+
+.buttom-edit-invoices{
+    margin-left: 1435px;
+}
+
+.firma-invoices{
+    margin-left: 770px;
+    font-weight: bold;
+}
+
+.firma2-invoices{
+    font-weight: bold;
+    text-align: center;
+}
+
+.label-show-invoices{
+    font-weight: bold;
+}
+
+.label-uno-invoices{
+    padding-left: 80px;
+}
+
+.label-dos-invoices{
+    padding-left: 92px;
+}
+
+.label-tres-invoices{
+    padding-left: 35px;
+}
+
+.label-cuatro-invoices{
+    padding-left: 110px;
+}
+
+.label-cinco-invoices{
+    padding-left: 70px;
+}
+
+.label-seis-invoices{
+    padding-left: 95px;
+}
+
 
 .buttom-cash-create{
     margin-left: 1150px;
@@ -153,13 +206,8 @@ body {
     margin-left: 1120px;
 }
 
-.div-show{
-    padding: 8px;
-}
 
-.btn-show{
-    margin-left: 1120px;
-}
+
 
 .btn-cash{
     margin-left: 1040px;
@@ -169,39 +217,9 @@ body {
     margin-left: 40px;
 }
 
-.label-uno{
-    padding-left: 80px;
-}
 
-.label-dos{
-    padding-left: 92px;
-}
 
-.label-tres{
-    padding-left: 35px;
-}
 
-.label-cuatro{
-    padding-left: 110px;
-}
-
-.label-cinco{
-    padding-left: 70px;
-}
-
-.label-seis{
-    padding-left: 95px;
-}
-
-.firma{
-    margin-left: 570px;
-    font-weight: bold;
-}
-
-.firma2{
-    font-weight: bold;
-    text-align: center;
-}
 
 .green {
     color: #1e7e34;
@@ -211,9 +229,6 @@ body {
     color: #bd2130;
 }
 
-.label-show{
-    font-weight: bold;
-}
 
 .show-cash{
     margin-left: 350px;

@@ -8,25 +8,11 @@ use Session;
 
 class CashReceiptController extends Controller
 {
-   public function index()
-   {
-       $cash_receipts = CashReceipt::OrderBy('id', 'DESC')->paginate();
-       return view('cash_receipts.index', compact('cash_receipts'));
-   }
-
-   public function show($id)
-   {
-       $cash_receipt = CashReceipt::find($id);
-       return view('cash_receipts.show', compact('cash_receipt'));
-   }
-
-   public function destroy($id)
-   {
-        $cash_receipt = CashReceipt::find($id);
-        $cash_receipt->delete();
-
-        return back()->with('info', 'El Recibo de caja fue eliminado');
-   }
+    public function index()
+    {
+        $cash_receipts = CashReceipt::OrderBy('id', 'desc')->paginate();
+        return view('cash_receipts.index', compact('cash_receipts'));
+    }
 
    public function create()
     {
@@ -55,9 +41,15 @@ class CashReceiptController extends Controller
                          ->with('success', 'Tu recibo fue creado satisfactoriamente');
     }
 
+    public function show($id)
+    {
+        $cash_receipt = CashReceipt::find($id);
+        return view('cash_receipts.show', compact('cash_receipt'));
+    }
+
     public function edit(CashReceipt $cash_receipt)
     {
-       return view('cash_receipts.edit', compact('cash_receipt'));
+        return view('cash_receipts.edit', compact('cash_receipt'));
     }
 
     public function update(Request $request, CashReceipt $cash_receipt)
@@ -76,6 +68,15 @@ class CashReceiptController extends Controller
         ]);
 
         $cash_receipt->update($request->all());
-        return redirect()->route('cash_receipts.index');
+        return redirect()->route('cash_receipts.index')
+                        ->with('info', 'El Recibo de caja fue actualizado');
+    }
+
+    public function destroy($id)
+    {
+        $cash_receipt = CashReceipt::find($id);
+        $cash_receipt->delete();
+
+        return back()->with('info', 'El Recibo de caja fue eliminado');
     }
 }

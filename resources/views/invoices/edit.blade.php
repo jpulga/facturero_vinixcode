@@ -4,9 +4,9 @@
     <div id="invoice">
         <div class="panel panel-default" v-clock>
             <div class="panel-heading">
-                <div class="clearfix div-create">
+                <div class="clearfix div-edit-invoices">
                     <span class="panel-title">Editar Factura</span>
-                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-default pull-right">Volver</a>
+                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-edit-invoices">Volver</a>
                 </div>
             </div>
 
@@ -14,7 +14,7 @@
                 @include('invoices.form_edit')
             </div>
             
-            <div class="panel-footer div-create">
+            <div class="panel-footer div-edit-invoices">
                 <a href="{{ route('invoices.index') }}" class="btn btn-outline-danger">Cancelar</a>
                 <a href="{{ route('invoices.index') }}" class="btn btn-outline-success" @click="update" :disabled="isProcessing">Actualizar</a>
             </div>

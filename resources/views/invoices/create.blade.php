@@ -4,9 +4,9 @@
 <div id="invoice">
     <div class="panel panel-default" v-clock>
         <div class="panel-heading">
-            <div class="clearfix div-create">
+            <div class="clearfix div-create-invoices">
                 <span class="panel-title">Crear Factura</span>
-                <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning pull-right buttom-create">Volver</a>
+                <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-create-invoices">Volver</a>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
             @include('invoices.form')
         </div>
         
-        <div class="panel-footer div-create">
+        <div class="panel-footer div-create-invoices">
             <a href="{{ route('invoices.index') }}" class="btn btn-outline-danger">Cancelar</a>
             <a href="{{ route('invoices.index') }}" class="btn btn-outline-success" @click="create" :disabled="isProcessing">Crear</a>
         </div>
