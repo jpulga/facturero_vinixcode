@@ -3,9 +3,9 @@
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <div class="clearfix div-show">
+            <div class="clearfix div-show-cash">
                 <span class="panel-title">Recibo de Caja</span>
-                    <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-warning btn-cash">Volver</a>
+                    <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-warning btn-show-cash">Volver</a>
                     <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-outline-primary">Editar</a>
                     <form class="form-inline" method="post" action="{{route('cash_receipts.destroy', $cash_receipt->id) }}" 
                         onsubmit="return confirm('Are you sure?')">
@@ -21,62 +21,62 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <p><img src="/svg/Vinix Code-01.png" alt="" width="52%" class="img-uno"></p>
+                        <p><img src="/svg/Vinix Code-01.png" alt="" width="42%" class="img-uno-cash"></p>
                     </div>
 
                     <div class="form-group">
-                        <label class="label-uno">www.vinixcode.com</label><br>
-                        <label class="label-tres">Calle 87 Sur # 55-695, Apto. 1603</label><br>
-                        <label class="label-cuatro">N° 055460</label><br>
-                        <label class="label-cinco">La Estrella, Antioquia</label><br>
-                        <label class="label-seis">NIT: 901116567</label>
+                        <label class="label-uno-cash">www.vinixcode.com</label><br>
+                        <label class="label-tres-cash">Calle 87 Sur # 55-695, Apto. 1603</label><br>
+                        <label class="label-cuatro-cash">N° 055460</label><br>
+                        <label class="label-cinco-cash">La Estrella, Antioquia</label><br>
+                        <label class="label-seis-cash">NIT: 901116567</label>
                     </div>
                 </div>
 
-                <div class="col-sm-8">
+                <div class="col-sm-8 show-cash1">
                     <div class="row">
                         <div class="col-sm-4">
-                            <label class="label-show">N° Recibo de Caja</label>
+                            <label class="label-show-cash">N° Recibo de Caja</label>
                             <p>{{$cash_receipt->box_number}}</p>
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="label-show">Recibimos</label>
+                            <label class="label-show-cash">Recibimos</label>
                             <p>{{ $cash_receipt->we_received }}</p>
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="label-show">Ciudad</label>
+                            <label class="label-show-cash">Ciudad</label>
                             <p>{{ $cash_receipt->city }}</p>
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="label-show">Fecha</label>
+                            <label class="label-show-cash">Fecha</label>
                             <p>{{ $cash_receipt->date }}</p>
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show">Tipo de Documento</label>
+                            <label class="label-show-cash">Tipo de Documento</label>
                             <p>{{ $cash_receipt->document_type }}</p>
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show">Numero de Documento</label>
+                            <label class="label-show-cash">Numero de Documento</label>
                             <p>{{ $cash_receipt->document_number }}</p>
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show">Valor</label>
+                            <label class="label-show-cash">Valor</label>
                             <p>{{ number_format($cash_receipt->value) }}</p>
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show">Valor en Letras</label>
+                            <label class="label-show-cash">Valor en Letras</label>
                             <p>{{ $cash_receipt->value_in_letters }}</p>
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show">Direccion</label>
+                            <label class="label-show-cash">Direccion</label>
                             <p>{{ $cash_receipt->address }}</p>
                         </div>
                     </div>

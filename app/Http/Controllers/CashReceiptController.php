@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\CashReceipt;
+use App\Http\Requests;
 use Illuminate\Http\Request;
-use Session;
+use App\CashReceipt;
 
 class CashReceiptController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $cash_receipts = CashReceipt::OrderBy('id', 'desc')->paginate();
+        $cash_receipts = CashReceipt::we_received($request->get('Recibimos'))->OrderBy('id', 'desc')->paginate();
         return view('cash_receipts.index', compact('cash_receipts'));
     }
 
    public function create()
     {
-        return view('cash_receipts.create');
+        $count = \DB::table('cash_receipts')->select('box_number')->limit(1)->orderBy('box_number', 'desc')->value('box_number');
+        return view('cash_receipts.create', compact('count'));
     }
 
     public function store(Request $request)

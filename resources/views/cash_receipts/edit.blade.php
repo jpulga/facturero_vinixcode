@@ -4,7 +4,7 @@
 <div id="cash_receipt">
     <div class="panel panel-default" v-clock>
         <div class="panel-heading">
-            <div class="clearfix div-create">
+            <div class="clearfix div-edit-cash">
                 <span class="panel-title">Editar Recibo de Caja</span>
             </div>
         </div>

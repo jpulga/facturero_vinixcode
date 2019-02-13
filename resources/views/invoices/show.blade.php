@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <p><img src="/svg/Vinix Code-01.png" alt="" width="52%" class="img-uno"></p>
+                        <p><img src="/svg/Vinix Code-01.png" alt="" width="42%" class="img-uno-invoices"></p>
                     </div>
                     <div class="form-group">
                         <label class="label-uno-invoices">www.vinixcode.com</label><br>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 show-invoices">
                     <div class="row">
                         <div class="col-sm-6">
                             <label class="label-show-invoices">N° de Factura</label>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 show-invoices">
                     <div class="row">
                         <div class="col-sm-6">
                             <label style="font-weight: bold;">Fecha de Factura</label>

@@ -66,7 +66,7 @@
         </div>     
     </div>
 
-    <div class="panel-footer div-create">
+    <div class="panel-footer div-edit-cash">
         <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-danger">Cancelar</a>
         <button type="submit" class="btn btn-outline-success">Actualizar</button>
     </div>

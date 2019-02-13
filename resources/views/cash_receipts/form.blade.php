@@ -4,7 +4,7 @@
         <div class="row form-cash">
             <div class="col-sm-3">
                 <label>N° Recibo de Caja</label>
-                <input type="text" class="form-control" name="box_number">
+                <input type="text" class="form-control" name="box_number" value="{{ $count+1 }}">
             </div>
 
             <div class="col-sm-3">
@@ -63,7 +63,7 @@
         </div>     
     </div>
 
-    <div class="panel-footer div-create">
+    <div class="panel-footer div-create-cash">
         <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-danger">Cancelar</a>
         <button type="submit" class="btn btn-outline-success">Crear</button>
     </div>

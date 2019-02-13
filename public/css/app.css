@@ -124,6 +124,7 @@ body {
 .table-error > input {
     background: #f2dede;
 }
+/*PRINCIPAL*/
 
 .nav-principal{
     background: black;
@@ -133,6 +134,13 @@ body {
     max-width: 1730px;
 }
 
+.green {
+    color: #1e7e34;
+}
+
+.red {
+    color: #bd2130;
+}
 /*INVOICES*/
 
 .btn-show-invoices{
@@ -174,64 +182,115 @@ body {
 }
 
 .label-uno-invoices{
-    padding-left: 80px;
+    padding-left: 180px;
 }
 
 .label-dos-invoices{
-    padding-left: 92px;
+    padding-left: 192px;
 }
 
 .label-tres-invoices{
-    padding-left: 35px;
+    padding-left: 135px;
 }
 
 .label-cuatro-invoices{
-    padding-left: 110px;
+    padding-left: 210px;
 }
 
 .label-cinco-invoices{
-    padding-left: 70px;
+    padding-left: 170px;
 }
 
 .label-seis-invoices{
-    padding-left: 95px;
+    padding-left: 195px;
+}
+
+.buscar-invoices{
+    border-radius: 10px;
+}
+
+.img-uno-invoices{
+    margin-left: 100px;
+}
+
+.show-invoices{
+    padding-top: 30px;
 }
 
 
-.buttom-cash-create{
-    margin-left: 1150px;
+/*CASH*/
+
+.buttom-create-cash{
+    margin-left: 1390px;
 }
 
 .edit-cash{
     margin-left: 1120px;
 }
 
-
-
-
-.btn-cash{
-    margin-left: 1040px;
+.div-create-cash{
+    padding: 8px;
 }
 
-.img-uno{
-    margin-left: 40px;
+.div-edit-cash{
+    padding: 8px;
 }
 
-
-
-
-
-.green {
-    color: #1e7e34;
+.label-uno-cash{
+    padding-left: 180px;
 }
 
-.red {
-    color: #bd2130;
+.label-tres-cash{
+    padding-left: 135px;
 }
 
+.label-cuatro-cash{
+    padding-left: 210px;
+}
+
+.label-cinco-cash{
+    padding-left: 170px;
+}
+
+.label-seis-cash{
+    padding-left: 195px;
+}
+
+.label-show-cash{
+    font-weight: bold;
+}
+
+.btn-show-cash{
+    margin-left: 1280px;
+}
+
+.img-uno-cash{
+    margin-left: 130px;
+}
 
 .show-cash{
-    margin-left: 350px;
+    margin-left: 450px;
     margin-top: 120px;
 }
+
+.div-show-cash{
+    padding: 8px;
+}
+
+.buscar-cash{
+    border-radius: 10px;
+}
+
+.show-cash1{
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
 

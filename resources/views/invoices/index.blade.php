@@ -5,7 +5,7 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand">Facturas</a>
     {!! Form::open(['route' => 'invoices.index', 'method' => 'GET', 'class' => 'form-inline', 'role' => 'search']) !!}
-        {!! Form::text('cliente', null, ['class' => 'form-control mr-sm-2', 'placeholder' => 'Buscar']) !!}
+        {!! Form::text('cliente', null, ['class' => 'form-control mr-sm-2 buscar-invoices', 'placeholder' => 'Buscar']) !!}
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0">Crear</a>
     {!! Form::close() !!}
@@ -58,8 +58,8 @@
     @else
     <div class="invoice-empty">
         <p class="invoice-empty-title">
-            No Invoices were created.
-            <a href="{{route('invoices.create')}}">Create Now!</a>
+            No hay Facturas.
+            <a href="{{route('invoices.create')}}">Crea Ahora!!</a>
         </p>
     </div>
     @endif

@@ -1,16 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-<nav class="navbar navbar-expand-lg navbar-light bg-light nav-invoice">
-    <a class="navbar-brand" href="#">Recibos de Caja</a>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-        
-        <form class="form-inline my-2 my-lg-0">
-            <a href="{{ route('cash_receipts.create') }}" class="btn btn-outline-success my-2 my-sm-0">Crear</a>
-        </form>
-    </div>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Recibos de caja</a>
+    {!! Form::open(['route' => 'cash_receipts.index', 'method' => 'GET', 'class' => 'form-inline', 'role' => 'search']) !!}
+        {!! Form::text('Recibimos', null, ['class' => 'form-control mr-sm-2 buscar-cash', 'placeholder' => 'Buscar']) !!}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <a href="{{ route('cash_receipts.create') }}" class="btn btn-outline-primary my-2 my-sm-0">Crear</a>
+    {!! Form::close() !!}
 </nav>
 <br>
 @if ($message = Session::get('success'))
@@ -62,8 +59,8 @@
     @else
     <div class="cash_receipt-empty">
         <p class="cash_receipt-empty-title text-center">
-            No cash receipts have been created
-            <a href="{{ route('cash_receipts.create') }}">Create Now!</a>
+            No hay Recibos de Cajas.
+            <a href="{{ route('cash_receipts.create') }}">Crea Ahora!</a>
         </p>
     </div>
     @endif

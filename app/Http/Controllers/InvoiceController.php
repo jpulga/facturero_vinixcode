@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Invoice;
 use App\InvoiceProduct;
@@ -48,6 +47,13 @@ class InvoiceController extends Controller
             return new InvoiceProduct($product);
         });
 
+        if($products->isEmpty()) {
+            return response()
+            ->json([
+                'products_empty' => ['One or more Product is required.']
+            ], 422);
+        }
+
         $data = $request->except('products');
         $data['sub_total'] = $products->sum('total');
         $data['grand_total'] = $data['sub_total'] - $data['discount'];
@@ -55,6 +61,12 @@ class InvoiceController extends Controller
         $invoice = Invoice::create($data);
 
         $invoice->products()->saveMany($products);
+
+        return response()
+            ->json([
+                'created' => true,
+                'id' => $invoice->id
+            ]);
 
         return redirect()->route('invoices.index')
                          ->with('success', 'Tu factura fue creada satisfactoriamente');
