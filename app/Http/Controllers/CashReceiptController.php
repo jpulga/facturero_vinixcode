@@ -10,7 +10,7 @@ class CashReceiptController extends Controller
 {
     public function index(Request $request)
     {
-        $cash_receipts = CashReceipt::we_received($request->get('Recibimos'))->OrderBy('id', 'desc')->paginate();
+        $cash_receipts = CashReceipt::we_received($request->get('Recibimos'))->OrderBy('id', 'desc')->paginate(20);
         return view('cash_receipts.index', compact('cash_receipts'));
     }
 

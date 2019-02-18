@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-<div id="cash_receipt">
+<div id="egresses">
     <div class="panel panel-default" v-clock>
         <div class="panel-heading">
-            <div class="clearfix div-edit-cash">
-                <span class="panel-title">Editar Recibo de Caja</span>
+            <div class="clearfix div-edit-egress">
+                <span class="panel-title">Editar Egreso</span>
             </div>
         </div>
-            @include('cash_receipts.form_edit')
+            @include('egresses.form_edit')
     </div>
 </div>
 @endsection
@@ -16,4 +16,3 @@
 @push('scripts')
     <script src="/js/app.js"></script>
 @endpush
- 

@@ -8,7 +8,7 @@
                     <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-warning btn-show-cash">Volver</a>
                     <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-outline-primary">Editar</a>
                     <form class="form-inline" method="post" action="{{route('cash_receipts.destroy', $cash_receipt->id) }}" 
-                        onsubmit="return confirm('Are you sure?')">
+                        onsubmit="return confirm('Estas seguro?')">
                         
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">

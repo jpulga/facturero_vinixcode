@@ -1,4 +1,4 @@
-<form action="{{ route('cash_receipts.store') }}" method="POST">
+<form action="{{ route('cash_receipts.store') }}" method="POST" class="form-cash">
     @csrf
     <div class="col-sm-12">
         <div class="row form-cash">

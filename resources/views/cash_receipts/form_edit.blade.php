@@ -1,4 +1,4 @@
-<form action="{{ route('cash_receipts.update', $cash_receipt->id) }}" method="POST">
+<form action="{{ route('cash_receipts.update', $cash_receipt->id) }}" method="POST" class="form-cash" >
    
     @csrf
     @method('PUT')
@@ -12,7 +12,7 @@
 
             <div class="col-sm-3">
                 <label>Fecha</label>
-                <input type="text" class="form-control" name="date" value="<?= date('Y-m-d') ?>">
+                <input type="text" class="form-control" name="date" value="{{ $cash_receipt->date }}">
             </div>
 
             <div class="col-sm-3">

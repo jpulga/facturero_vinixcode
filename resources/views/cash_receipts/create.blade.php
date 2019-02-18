@@ -9,10 +9,7 @@
                 <a href="{{ route('cash_receipts.index') }}" class="btn btn-outline-warning buttom-create-cash">Volver</a>
             </div>
         </div>
-
-        <div class="panel-body">
             @include('cash_receipts.form')
-        </div>  
     </div>
 </div>
 @endsection

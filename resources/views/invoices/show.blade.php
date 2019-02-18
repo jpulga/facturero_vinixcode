@@ -8,7 +8,7 @@
                     <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning btn-show-invoices">Volver</a>
                     <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary ">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
-                          onsubmit="return confirm('Are you sure?')">
+                          onsubmit="return confirm('Estas seguro?')">
 
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">

@@ -285,8 +285,77 @@ body {
     padding-top: 30px;
 }
 
+.form-cash{
+    padding-top: 10px;
+}
 
+/*EGRESS*/
 
+.div-create-egress{
+    padding: 8px;
+}
+
+.buttom-create-egress{
+    margin-left: 1450px;
+}
+
+.div-edit-egress{
+    padding: 8px;
+}
+
+.form-egress{
+    padding-top: 10px;
+}
+
+.div-show-egress{
+    padding: 8px;
+}
+
+.panel-default-egress{
+    width: 1400px;
+    margin-left: 130px;
+}
+
+.btn-show-egress{
+    margin-left: 1050px;
+}
+
+.label-uno-egress{
+    padding-left: 140px;
+}
+
+.label-tres-egress{
+    padding-left: 85px;
+}
+
+.label-cuatro-egress{
+    padding-left: 170px;
+}
+
+.label-cinco-egress{
+    padding-left: 130px;
+}
+
+.label-seis-egress{
+    padding-left: 155px;
+}
+
+.label-show-egress{
+    font-weight: bold;
+}
+
+.show-egress1{
+    padding-top: 30px;
+}
+
+.img-uno-egress{
+    margin-left: 110px;
+}
+
+.show-egress{
+    margin-left: 160px;
+    margin-top: 120px;
+}
 
 
 

@@ -26,20 +26,20 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'invoice_number' => 'required|alpha_dash|unique:invoices',
-            'client' => 'required|max:255',
-            'date' => 'required|date_format:Y-m-d',
-            'expiration_date' => 'required|date_format:Y-m-d',
-            'document_type' => 'required|max:255',
-            'document_number' => 'required|numeric|min:0',
-            'cellphone' => 'required|numeric|min:0',
-            'address' => 'required|max:255',
-            'state' => 'required|max:255',
-            'notes' => 'required|max:1000',
-            'discount' => 'required|numeric|min:0',
-            'products.*.name' => 'required|max:255',
-            'products.*.price' => 'required|numeric|min:1',
-            'products.*.qty' => 'required|integer|min:1'
+            'invoice_number'     => 'required|alpha_dash|unique:invoices',
+            'client'             => 'required',
+            'date'               => 'required',
+            'expiration_date'    => 'required',
+            'document_type'      => 'required',
+            'document_number'    => 'required',
+            'cellphone'          => 'required',
+            'address'            => 'required',
+            'state'              => 'required',
+            'notes'              => 'required',
+            'discount'           => 'required',
+            'products.*.name'    => 'required',
+            'products.*.price'   => 'required',
+            'products.*.qty'     => 'required'
         ]);
 
         $products = collect($request->products)->transform(function($product) {
@@ -88,20 +88,19 @@ class InvoiceController extends Controller
     {
         $this->validate($request, [
             'invoice_number' => 'required|alpha_dash|unique:invoices,invoice_number,'.$id.',id',
-            'company_origin' => 'required|max:255',
-            'client' => 'required|max:255',
-            'date' => 'required|date_format:Y-m-d',
-            'expiration_date' => 'required|date_format:Y-m-d',
-            'document_type' => 'required|max:255',
-            'document_number' => 'required|numeric|min:0',
-            'cellphone' => 'required|numeric|min:0',
-            'address' => 'required|max:255',
-            'state' => 'required|max:255',
-            'notes' => 'required|max:1000',
-            'discount' => 'required|numeric|min:0',
-            'products.*.name' => 'required|max:255',
-            'products.*.price' => 'required|numeric|min:1',
-            'products.*.qty' => 'required|integer|min:1'
+            'client'             => 'required',
+            'date'               => 'required',
+            'expiration_date'    => 'required',
+            'document_type'      => 'required',
+            'document_number'    => 'required',
+            'cellphone'          => 'required',
+            'address'            => 'required',
+            'state'              => 'required',
+            'notes'              => 'required',
+            'discount'           => 'required',
+            'products.*.name'    => 'required',
+            'products.*.price'   => 'required',
+            'products.*.qty'     => 'required'
         ]);
 
         $invoice = Invoice::findOrFail($id);

@@ -27,7 +27,7 @@
                 <div class="links">
                     <a href="{{ route('invoices.index') }}">Facturas</a>
                     <a href="{{ route('cash_receipts.index') }}">Recibos de Caja</a>
-  
+                    <a href="{{ route('egresses.index') }}">Egresos</a>
                 </div>
             </div>
         </div>

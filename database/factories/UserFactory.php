@@ -37,3 +37,16 @@ $factory->define(App\CashReceipt::class, function (Faker $faker) {
         'description' => $faker->text(50) 
     ];
 });
+
+$factory->define(App\Egress::class, function (Faker $faker) {
+    return [
+        'exit_number' => $faker->numberBetween(10000, 40000),
+        'turned' => $faker->name(10),
+        'document_type' => $faker->text(5),
+        'document_number' => $faker->numberBetween(10000, 40000),
+        'date' => $faker->date(),
+        'value' => $faker->numberBetween(10000, 40000),
+        'value_in_letters' => $faker->text(10),
+        'description' => $faker->text(50) 
+    ];
+});
