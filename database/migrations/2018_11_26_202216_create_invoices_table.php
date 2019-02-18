@@ -27,9 +27,9 @@ class CreateInvoicesTable extends Migration
             $table->string('currency');
             $table->string('state');
             $table->string('notes');
-            $table->decimal('sub_total');
-            $table->decimal('discount');
-            $table->decimal('grand_total');          
+            $table->string('sub_total');
+            $table->string('discount');
+            $table->string('grand_total');          
             $table->timestamps();
         });
     }

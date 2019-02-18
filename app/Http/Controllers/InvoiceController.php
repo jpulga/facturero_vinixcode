@@ -26,20 +26,20 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'invoice_number'     => 'required|alpha_dash|unique:invoices',
-            'client'             => 'required',
-            'date'               => 'required',
-            'expiration_date'    => 'required',
-            'document_type'      => 'required',
-            'document_number'    => 'required',
-            'cellphone'          => 'required',
-            'address'            => 'required',
-            'state'              => 'required',
-            'notes'              => 'required',
-            'discount'           => 'required',
-            'products.*.name'    => 'required',
-            'products.*.price'   => 'required',
-            'products.*.qty'     => 'required'
+            'invoice_number' => 'required|alpha_dash|unique:invoices',
+            'client' => 'required|max:255',
+            'date' => 'required|date_format:Y-m-d',
+            'expiration_date' => 'required|date_format:Y-m-d',
+            'document_type' => 'required|max:255',
+            'document_number' => 'required|numeric|min:0',
+            'cellphone' => 'required|numeric|min:0',
+            'address' => 'required|max:255',
+            'state' => 'required|max:255',
+            'notes' => 'required|max:1000',
+            'discount' => 'required|numeric|min:0',
+            'products.*.name' => 'required|max:255',
+            'products.*.price' => 'required|numeric|min:1',
+            'products.*.qty' => 'required|integer|min:1'
         ]);
 
         $products = collect($request->products)->transform(function($product) {
@@ -67,9 +67,6 @@ class InvoiceController extends Controller
                 'created' => true,
                 'id' => $invoice->id
             ]);
-
-        return redirect()->route('invoices.index')
-                         ->with('success', 'Tu factura fue creada satisfactoriamente');
     }
 
     public function show($id)
@@ -88,19 +85,20 @@ class InvoiceController extends Controller
     {
         $this->validate($request, [
             'invoice_number' => 'required|alpha_dash|unique:invoices,invoice_number,'.$id.',id',
-            'client'             => 'required',
-            'date'               => 'required',
-            'expiration_date'    => 'required',
-            'document_type'      => 'required',
-            'document_number'    => 'required',
-            'cellphone'          => 'required',
-            'address'            => 'required',
-            'state'              => 'required',
-            'notes'              => 'required',
-            'discount'           => 'required',
-            'products.*.name'    => 'required',
-            'products.*.price'   => 'required',
-            'products.*.qty'     => 'required'
+            'company_origin' => 'required|max:255',
+            'client' => 'required|max:255',
+            'date' => 'required|date_format:Y-m-d',
+            'expiration_date' => 'required|date_format:Y-m-d',
+            'document_type' => 'required|max:255',
+            'document_number' => 'required|numeric|min:0',
+            'cellphone' => 'required|numeric|min:0',
+            'address' => 'required|max:255',
+            'state' => 'required|max:255',
+            'notes' => 'required|max:1000',
+            'discount' => 'required|numeric|min:0',
+            'products.*.name' => 'required|max:255',
+            'products.*.price' => 'required|numeric|min:1',
+            'products.*.qty' => 'required|integer|min:1'
         ]);
 
         $invoice = Invoice::findOrFail($id);
@@ -110,6 +108,13 @@ class InvoiceController extends Controller
             return new InvoiceProduct($product);
         });
 
+        if($products->isEmpty()) {
+            return response()
+            ->json([
+                'products_empty' => ['One or more Product is required.']
+            ], 422);
+        }
+
         $data = $request->except('products');
         $data['sub_total'] = $products->sum('total');
         $data['grand_total'] = $data['sub_total'] - $data['discount'];
@@ -118,8 +123,13 @@ class InvoiceController extends Controller
 
         InvoiceProduct::where('invoice_id', $invoice->id)->delete();
 
-        return redirect()->route('invoices.index')
-                        ->with('success', 'La factura fue actualizada');
+        $invoice->products()->saveMany($products);
+
+        return response()
+            ->json([
+                'updated' => true,
+                'id' => $invoice->id
+            ]);
     }
 
     public function destroy($id)

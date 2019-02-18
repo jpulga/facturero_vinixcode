@@ -26,9 +26,10 @@
                 <th>N° Factura</th>              
                 <th>Cliente</th>
                 <th>Fecha</th>
-                <th>Fecha de Vencimiento</th>
+                <th style="width:210px">Fecha de Vencimiento</th>
                 <th>Estado</th>
                 <th>Total</th>
+                <th>Created At</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,7 @@
                 <td>{{$invoice->expiration_date}}</td>
                 <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
+                <td>{{$invoice->created_at->diffForHumans()}}</td>
                 <td class="text-right">
                     <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm">Ver</a>
                     <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm">Editar</a>
