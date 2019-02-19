@@ -132,11 +132,21 @@ class InvoiceController extends Controller
    }
 
     public function duplicate(Invoice $invoice) {
+        $invoice = Invoice::with('products')->findOrFail($invoice->id);
         $count = \DB::table('invoices')->select('invoice_number')->limit(1)->orderBy('invoice_number', 'desc')->value('invoice_number');
-        
+
+        $products = collect($invoice->products)->transform(function($product) {
+            $product = $product->toArray();
+            $product['total'] = $product['qty'] * $product['price'];
+            return new InvoiceProduct($product);
+        });
+
         $data = $invoice->toArray();
+        $data['sub_total'] = $products->sum('total');
+        $data['grand_total'] = $data['sub_total'] - $data['discount'];
         $data['invoice_number'] = $count + 1;
         $new_invoice = Invoice::create($data);
+        $new_invoice->products()->saveMany($products);
 
         return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' ha sido duplicada exitosamente.');
     }
