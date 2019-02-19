@@ -81,4 +81,14 @@ class CashReceiptController extends Controller
 
         return redirect()->route('cash_receipts.index')->with('success', 'El recibo de caja #' . $cash_receipt->box_number . ' fue eliminado exitosamente.');
     }
+
+    public function duplicate(CashReceipt $cashReceipt) {
+        $count = \DB::table('cash_receipts')->select('box_number')->limit(1)->orderBy('box_number', 'desc')->value('box_number');
+        
+        $data = $cashReceipt->toArray();
+        $data['box_number'] = $count + 1;
+        $new_cashReceipt = CashReceipt::create($data);
+
+        return redirect()->route('cash_receipts.index')->with('success', 'El recibo #' . $cashReceipt->box_number . ' ha sido duplicado exitosamente.');
+    }
 }

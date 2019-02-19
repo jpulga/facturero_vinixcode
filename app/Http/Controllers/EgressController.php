@@ -116,4 +116,14 @@ class EgressController extends Controller
 
         return redirect()->route('egresses.index')->with('success', 'El egreso #' . $egress->exit_number . ' fue eliminado exitosamente.');
     }
+
+    public function duplicate(Egress $egress) {
+        $count = \DB::table('egresses')->select('exit_number')->limit(1)->orderBy('exit_number', 'desc')->value('exit_number');
+        
+        $data = $egress->toArray();
+        $data['exit_number'] = $count + 1;
+        $new_egress = Egress::create($data);
+
+        return redirect()->route('egresses.index')->with('success', 'El egreso #' . $egress->exit_number . ' ha sido duplicado exitosamente.');
+    }
 }

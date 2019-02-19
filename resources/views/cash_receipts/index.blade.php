@@ -40,13 +40,14 @@
                 <td>{{$cash_receipt->description}}</td>
                 <td>{{$cash_receipt->created_at->diffForHumans()}}</td>
                 <td>
-                    <a href="{{ route('cash_receipts.show', $cash_receipt->id) }}" class="btn btn-outline-dark btn-sm">Ver</a>
-                    <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a title="Ver Recibo" href="{{ route('cash_receipts.show', $cash_receipt->id) }}" class="btn btn-outline-dark btn-sm"><i class="far fa-file-pdf"></i></a>
+                    <a title="Editar Recibo" href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i></a>
+                    <a title="Clonar Recibo" href="{{ route('cash_receipts.duplicate', $cash_receipt->id) }}" class="btn btn-outline-success btn-sm"><i class="far fa-clone"></i></a>
                     <form class="form-inline" method="post" action="{{route('cash_receipts.destroy', $cash_receipt)}}"
                                 onsubmit="return confirm('¿Estas seguro de borrar el recibo #{{$cash_receipt->box_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">
+                        <button title="Borrar Recibo" type="submit" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

@@ -107,7 +107,7 @@
                 <td class="table-empty" colspan="2">
                     <span @click="addLine" class="table-add_line">Agregar Producto</span>
                 </td>
-                <td class="table-label">Sub Total</td>
+                <td class="table-label">Subtotal</td>
                 <td class="table-amount">@{{subTotal}}</td>
             </tr>
             <tr>

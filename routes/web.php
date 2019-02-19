@@ -15,9 +15,12 @@ Route::get('/', function () {
 });
 
 Route::resource('cash_receipts', 'CashReceiptController'); 
+Route::get('/cash_receipts/{cash_receipt}/duplicate', 'CashReceiptController@duplicate')->name('cash_receipts.duplicate');
 
 Route::resource('invoices', 'InvoiceController'); 
+Route::get('/invoices/{invoice}/duplicate', 'InvoiceController@duplicate')->name('invoices.duplicate');
 
 Route::resource('egresses', 'EgressController'); 
+Route::get('/egresses/{egress}/duplicate', 'EgressController@duplicate')->name('egresses.duplicate');
 
 

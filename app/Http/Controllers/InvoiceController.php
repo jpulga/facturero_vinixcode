@@ -130,4 +130,14 @@ class InvoiceController extends Controller
 
         return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' fue eliminada exitosamente.');
    }
+
+    public function duplicate(Invoice $invoice) {
+        $count = \DB::table('invoices')->select('invoice_number')->limit(1)->orderBy('invoice_number', 'desc')->value('invoice_number');
+        
+        $data = $invoice->toArray();
+        $data['invoice_number'] = $count + 1;
+        $new_invoice = Invoice::create($data);
+
+        return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' ha sido duplicada exitosamente.');
+    }
 }

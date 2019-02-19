@@ -39,13 +39,14 @@
                 <td>{{$egress->description}}</td>
                 <td>{{$egress->created_at->diffForHumans()}}</td>
                 <td>
-                    <a href="{{ route('egresses.show', $egress->id) }}" class="btn btn-outline-dark btn-sm">Ver</a>
-                    <a href="{{ route('egresses.edit', $egress->id) }}" class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a title="Ver Egreso" href="{{ route('egresses.show', $egress->id) }}" class="btn btn-outline-dark btn-sm"><i class="far fa-file-pdf"></i></a>
+                    <a title="Editar Egreso" href="{{ route('egresses.edit', $egress->id) }}" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i></a>
+                    <a title="Clonar Egreso" href="{{ route('egresses.duplicate', $egress->id) }}" class="btn btn-outline-success btn-sm"><i class="far fa-clone"></i></a>
                     <form class="form-inline" method="post" action="{{route('egresses.destroy', $egress)}}"
                                 onsubmit="return confirm('¿Estas seguro de borrar el egreso #{{$egress->exit_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">
+                        <button title="Borrar Egreso" type="submit" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

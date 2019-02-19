@@ -38,13 +38,14 @@
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
                 <td>{{$invoice->created_at->diffForHumans()}}</td>
                 <td>
-                    <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm">Ver</a>
-                    <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm">Editar</a>
+                    <a title="Ver Factura" href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm"><i class="far fa-file-pdf"></i></a>
+                    <a title="Editar Factura" href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i></a>
+                    <a title="Clonar Factura" href="{{ route('invoices.duplicate', $invoice) }}" class="btn btn-outline-success btn-sm"><i class="far fa-clone"></i></a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
                                 onsubmit="return confirm('¿Estas seguro de borrar la factura #{{$invoice->invoice_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">
+                        <button title="Borrar Factura" type="submit" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>
