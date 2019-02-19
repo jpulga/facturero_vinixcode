@@ -37,6 +37,9 @@ class InvoiceController extends Controller
             'state' => 'required|max:255',
             'notes' => 'required',
             'discount' => 'required|numeric|min:0',
+            'products.0.name' => 'required|max:255',
+            'products.0.price' => 'required|numeric|min:1',
+            'products.0.qty' => 'required|numeric|min:1',
             'products.*.name' => 'required|max:255',
             'products.*.price' => 'required|numeric|min:1',
             'products.*.qty' => 'required|numeric|min:1'
@@ -47,13 +50,6 @@ class InvoiceController extends Controller
             return new InvoiceProduct($product);
         });
 
-        if($products->isEmpty()) {
-            return response()
-            ->json([
-                'products_empty' => ['One or more Product is required.']
-            ], 422);
-        }
-
         $data = $request->except('products');
         $data['sub_total'] = $products->sum('total');
         $data['grand_total'] = $data['sub_total'] - $data['discount'];
@@ -62,11 +58,7 @@ class InvoiceController extends Controller
 
         $invoice->products()->saveMany($products);
 
-        return response()
-            ->json([
-                'created' => true,
-                'id' => $invoice->id
-            ]);
+        return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' fue creada exitosamente.');
     }
 
     public function show($id)
@@ -95,6 +87,9 @@ class InvoiceController extends Controller
             'state' => 'required|max:255',
             'notes' => 'required',
             'discount' => 'required|numeric|min:0',
+            'products.0.name' => 'required|max:255',
+            'products.0.price' => 'required|numeric|min:1',
+            'products.0.qty' => 'required|numeric|min:1',
             'products.*.name' => 'required|max:255',
             'products.*.price' => 'required|numeric|min:1',
             'products.*.qty' => 'required|numeric|min:1'
@@ -107,13 +102,6 @@ class InvoiceController extends Controller
             return new InvoiceProduct($product);
         });
 
-        if($products->isEmpty()) {
-            return response()
-            ->json([
-                'products_empty' => ['One or more Product is required.']
-            ], 422);
-        }
-
         $data = $request->except('products');
         $data['sub_total'] = $products->sum('total');
         $data['grand_total'] = $data['sub_total'] - $data['discount'];
@@ -124,11 +112,7 @@ class InvoiceController extends Controller
 
         $invoice->products()->saveMany($products);
 
-        return response()
-            ->json([
-                'updated' => true,
-                'id' => $invoice->id
-            ]);
+        return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' fue actualizada exitosamente.');
     }
 
     public function destroy($id)
@@ -140,6 +124,6 @@ class InvoiceController extends Controller
 
         $invoice->delete();
 
-        return redirect()->route('invoices.index')->with('success', 'La factura fue eliminada.');
+        return redirect()->route('invoices.index')->with('success', 'La factura #' . $invoice->invoice_number . ' fue eliminada exitosamente.');
    }
 }

@@ -1,24 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-<div id="invoice">
-    <div class="panel panel-default" v-clock>
-        <div class="panel-heading">
-            <div class="clearfix div-create-invoices">
-                <span class="panel-title">Crear Factura</span>
-                <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-create-invoices">Volver</a>
-            </div>
-        </div>
+@include('invoices.fragment.info')
 
-        <div class="panel-body">
+<div id="invoice">
+    <form action="{{ route('invoices.store') }}" method="POST" class="form-invoice">
+        <div class="panel panel-default" v-clock>
+            <div class="panel-heading">
+                <div class="clearfix div-create-invoices">
+                    <span class="panel-title">Crear Factura</span>
+                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-create-invoices">Volver</a>
+                </div>
+            </div>
+
             @include('invoices.form')
         </div>
-        
-        <div class="panel-footer div-create-invoices">
-            <a href="{{ route('invoices.index') }}" class="btn btn-outline-danger">Cancelar</a>
-            <a href="{{ route('invoices.index') }}" class="btn btn-outline-success" @click="create" :disabled="isProcessing">Crear</a>
-        </div>
-    </div>
+    </form>
 </div>
 @endsection
 

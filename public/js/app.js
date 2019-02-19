@@ -14,36 +14,6 @@ var app = new Vue({
       },
       remove: function(product) {
         this.form.products.$remove(product);
-      },
-      create: function() {
-        this.isProcessing = true;
-        this.$http.post('/invoices', this.form)
-          .then(function(response) {
-            if(response.data.created) {
-              window.location = '/invoices/' + response.data.id;
-            } else {
-              this.isProcessing = false;
-            }
-          })
-          .catch(function(response) {
-            this.isProcessing = false;
-            Vue.set(this.$data, 'errors', response.data);
-          })
-      },
-      update: function() {
-        this.isProcessing = true;
-        this.$http.put('/invoices/' + this.form.id, this.form)
-          .then(function(response) {
-            if(response.data.updated) {
-              window.location = '/invoices/' + response.data.id;
-            } else {
-              this.isProcessing = false;
-            }
-          })
-          .catch(function(response) {
-            this.isProcessing = false;
-            Vue.set(this.$data, 'errors', response.data);
-          })
       }
     },
     computed: {

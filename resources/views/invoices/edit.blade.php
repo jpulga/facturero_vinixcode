@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    <div id="invoice">
+@include('invoices.fragment.info')
+
+<div id="invoice">
+    <form action="{{ route('invoices.update', $invoice->id) }}" method="POST" class="form-invoices">
         <div class="panel panel-default" v-clock>
             <div class="panel-heading">
                 <div class="clearfix div-edit-invoices">
@@ -10,16 +13,11 @@
                 </div>
             </div>
 
-            <div class="panel-body">
-                @include('invoices.form_edit')
-            </div>
+            @include('invoices.form_edit')
             
-            <div class="panel-footer div-edit-invoices">
-                <a href="{{ route('invoices.index') }}" class="btn btn-outline-danger">Cancelar</a>
-                <a href="{{ route('invoices.index') }}" class="btn btn-outline-success" @click="update" :disabled="isProcessing">Actualizar</a>
-            </div>
         </div>
-    </div>
+    </form>
+</div>
 @endsection
 
 @push('scripts')

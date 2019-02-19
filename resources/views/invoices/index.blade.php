@@ -11,12 +11,6 @@
     {!! Form::close() !!}
 </nav>
 <br>
-@if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-@endif
-<br>
 @include('invoices.fragment.info')
 <div class="container container-principal">
     @if($invoices->count())
