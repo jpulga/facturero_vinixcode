@@ -25,7 +25,8 @@ class EgressController extends Controller
      */
     public function create()
     {
-        return view('egresses.create');
+        $count = \DB::table('egresses')->select('exit_number')->limit(1)->orderBy('exit_number', 'desc')->value('exit_number');
+        return view('egresses.create', compact('count'));
     }
 
     /**
@@ -108,8 +109,11 @@ class EgressController extends Controller
      * @param  \App\Egress  $egress
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Egress $egress)
+    public function destroy($id)
     {
-        //
+        $egress = Egress::find($id);
+        $egress->delete();
+
+        return back()->with('info', 'El egreso fue eliminado');
     }
 }

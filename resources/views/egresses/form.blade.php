@@ -4,7 +4,7 @@
         <div class="row form-cash">
             <div class="col-sm-3">
                 <label>N° Egreso</label>
-                <input type="text" class="form-control" name="exit_number" >
+                <input type="text" class="form-control" name="exit_number" value="{{ $count+1 }}">
             </div>
 
             <div class="col-sm-3">
@@ -34,7 +34,7 @@
 
             <div class="col-sm-4">
                 <label>Valor</label>
-                <input type="text" class="form-control" name="value">
+                <input type="text" class="form-control" name="value"> 
             </div>
 
             <div class="col-sm-4">             
