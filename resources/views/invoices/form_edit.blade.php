@@ -11,7 +11,7 @@
 
     <div class="form-group col-md-2">
         <label>Fecha</label>
-        <input type="date" class="form-control" v-model="form.date" value="<?= date('Y-m-d') ?>">
+        <input type="date" class="form-control" v-model="form.date">
     </div>
 
     <div class="form-group col-md-2">

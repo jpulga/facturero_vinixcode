@@ -16,13 +16,13 @@
 
     <div class="form-group col-md-2">
         <label>Fecha de Vencimiento</label>
-        <input type="date" class="form-control" v-model="form.expiration_date">
+        <input type="date" class="form-control" v-model="form.expiration_date" value="<?= date('Y-m-d') ?>">
     </div>
 
     <div class="form-group col-md-2">
         <label>Tipo de Documento</label>
         <select class="form-control" v-model="form.document_type">
-            <option value="NIT">Nit</option>
+            <option value="NIT" selected>Nit</option>
             <option value="Cedula">Cédula</option>
         </select>
     </div>
@@ -47,7 +47,7 @@
     <div class="form-group col-md-3">
         <label>Moneda</label>
         <select class="form-control" v-model="form.currency">
-            <option value="USD">USD (Dolares Americanos)</option>
+            <option value="USD" selected>USD (Dolares Americanos)</option>
             <option value="COP">COP (Pesos Colombianos)</option>
         </select>
     </div>
@@ -55,7 +55,7 @@
     <div class="form-group col-md-3">
         <label>Estado</label>
         <select class="form-control" v-model="form.state">
-            <option value="Debe">Debe</option>
+            <option value="Debe" selected>Debe</option>
             <option value="Paga">Paga</option>
         </select>
     </div>

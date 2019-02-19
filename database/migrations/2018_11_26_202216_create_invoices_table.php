@@ -15,21 +15,21 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('invoice_number')->unique();
-            $table->string('company_origin');
-            $table->string('client');
+            $table->string('invoice_number', 255)->unique();
+            $table->string('company_origin', 255);
+            $table->string('client', 255);
             $table->date('date');
             $table->date('expiration_date');
-            $table->string('document_type');
-            $table->string('document_number');
-            $table->string('cellphone');
-            $table->string('address');
-            $table->string('currency');
-            $table->string('state');
-            $table->string('notes');
-            $table->string('sub_total');
-            $table->string('discount');
-            $table->string('grand_total');          
+            $table->string('document_type', 255);
+            $table->string('document_number', 255)->nullable();
+            $table->string('cellphone', 255)->nullable();
+            $table->string('address', 255)->nullable();
+            $table->string('currency', 3);
+            $table->string('state', 255);
+            $table->text('notes');
+            $table->string('sub_total', 255);
+            $table->string('discount', 255);
+            $table->string('grand_total', 255);          
             $table->timestamps();
         });
     }

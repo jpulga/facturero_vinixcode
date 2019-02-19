@@ -26,10 +26,11 @@
                 <th>N° Factura</th>              
                 <th>Cliente</th>
                 <th>Fecha</th>
-                <th style="width:210px">Fecha de Vencimiento</th>
+                <th>Fecha de Vencimiento</th>
                 <th>Estado</th>
                 <th>Total</th>
-                <th>Created At</th>
+                <th>Fecha de Creacion</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -42,11 +43,11 @@
                 <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
                 <td>$ {{ number_format($invoice->grand_total)}}</td>
                 <td>{{$invoice->created_at->diffForHumans()}}</td>
-                <td class="text-right">
+                <td>
                     <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm">Ver</a>
                     <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
-                                onsubmit="return confirm('Estas seguro que deseas borrar esta factura N° {{$invoice->invoice_number}}')">
+                                onsubmit="return confirm('¿Estas seguro de borrar la factura #{{$invoice->invoice_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">

@@ -8,7 +8,7 @@
                     <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning btn-show-invoices">Volver</a>
                     <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary ">Editar</a>
                     <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
-                          onsubmit="return confirm('Estas seguro?')">
+                          onsubmit="return confirm('¿Esta seguro de borrar la factura #{{$invoice->invoice_number}}?')">
 
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -46,12 +46,12 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label class="label-show-invoices">Direccion</label>
+                            <label class="label-show-invoices">Dirección</label>
                             <p>{{$invoice->address}}</p>
                         </div>
 
                         <div class="col-sm-6">
-                            <label class="label-show-invoices">Telefono</label>
+                            <label class="label-show-invoices">Teléfono</label>
                             <p>{{$invoice->cellphone}}</p>
                         </div> 
                     </div>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <label style="font-weight: bold;">Notas</label>
-                                <p>{{$invoice->notes}}</p>
+                                <p>{!! nl2br($invoice->notes) !!}</p>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         </div>
                         
                         <div class="col-sm-6">
-                            <label style="font-weight: bold;">Numero de Documento</label>
+                            <label style="font-weight: bold;">Número de Documento</label>
                             <p>{{$invoice->document_number}}</p>
                         </div> 
                     </div>
@@ -114,7 +114,7 @@
                 <tfoot>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
-                        <td class="table-label">Sub Total</td>
+                        <td class="table-label">Subtotal</td>
                         <td class="table-amount">$ {{ number_format ($invoice->sub_total)}}</td>
                     </tr>
                     <tr>

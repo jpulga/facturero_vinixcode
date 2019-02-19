@@ -30,16 +30,16 @@ class InvoiceController extends Controller
             'client' => 'required|max:255',
             'date' => 'required|date_format:Y-m-d',
             'expiration_date' => 'required|date_format:Y-m-d',
-            'document_type' => 'required|max:255',
-            'document_number' => 'required|numeric|min:0',
-            'cellphone' => 'required|numeric|min:0',
+            'document_type' => 'required',
+            'document_number' => 'max:255',
             'address' => 'required|max:255',
+            'currency' => 'required|max:3',
             'state' => 'required|max:255',
-            'notes' => 'required|max:1000',
+            'notes' => 'required',
             'discount' => 'required|numeric|min:0',
             'products.*.name' => 'required|max:255',
             'products.*.price' => 'required|numeric|min:1',
-            'products.*.qty' => 'required|integer|min:1'
+            'products.*.qty' => 'required|numeric|min:1'
         ]);
 
         $products = collect($request->products)->transform(function($product) {
@@ -85,20 +85,19 @@ class InvoiceController extends Controller
     {
         $this->validate($request, [
             'invoice_number' => 'required|alpha_dash|unique:invoices,invoice_number,'.$id.',id',
-            'company_origin' => 'required|max:255',
             'client' => 'required|max:255',
             'date' => 'required|date_format:Y-m-d',
             'expiration_date' => 'required|date_format:Y-m-d',
-            'document_type' => 'required|max:255',
-            'document_number' => 'required|numeric|min:0',
-            'cellphone' => 'required|numeric|min:0',
+            'document_type' => 'required',
+            'document_number' => 'max:255',
             'address' => 'required|max:255',
+            'currency' => 'required|max:3',
             'state' => 'required|max:255',
-            'notes' => 'required|max:1000',
+            'notes' => 'required',
             'discount' => 'required|numeric|min:0',
             'products.*.name' => 'required|max:255',
             'products.*.price' => 'required|numeric|min:1',
-            'products.*.qty' => 'required|integer|min:1'
+            'products.*.qty' => 'required|numeric|min:1'
         ]);
 
         $invoice = Invoice::findOrFail($id);
@@ -141,6 +140,6 @@ class InvoiceController extends Controller
 
         $invoice->delete();
 
-        return back()->with('success', 'La factura fue eliminada.');
+        return redirect()->route('invoices.index')->with('success', 'La factura fue eliminada.');
    }
 }
