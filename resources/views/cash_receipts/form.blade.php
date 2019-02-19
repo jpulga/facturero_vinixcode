@@ -9,11 +9,11 @@
 
             <div class="col-sm-3">
                 <label>Fecha</label>
-                <input type="text" class="form-control" name="date" value="<?= date('Y-m-d') ?>">
+                <input type="date" class="form-control" name="date" value="<?= date('Y-m-d') ?>">
             </div>
 
             <div class="col-sm-3">
-                <label>Recibimos</label>
+                <label>Recibimos De</label>
                 <input type="text" class="form-control" name="we_received">
             </div>
 

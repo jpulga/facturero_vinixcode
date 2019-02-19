@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+@include('fragment.info')
+
 <div id="egresses">
     <div class="panel panel-default" v-clock>
         <div class="panel-heading">

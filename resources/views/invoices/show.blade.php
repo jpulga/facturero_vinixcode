@@ -27,7 +27,6 @@
                         <label class="label-uno-invoices">www.vinixcode.com</label><br>
                         <label class="label-dos-invoices">Factura de Venta</label><br>
                         <label class="label-tres-invoices">Calle 87 Sur # 55-695, Apto. 1603</label><br>
-                        <label class="label-cuatro-invoices">N° 055460</label><br>
                         <label class="label-cinco-invoices">La Estrella, Antioquia</label><br>
                         <label class="label-seis-invoices">NIT: 901116567</label>
                     </div>

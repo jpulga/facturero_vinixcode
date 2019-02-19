@@ -15,16 +15,16 @@ class CreateCashReceiptsTable extends Migration
     {
         Schema::create('cash_receipts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('box_number')->unique();
-            $table->string('we_received');
-            $table->string('address');
-            $table->string('city');
-            $table->string('document_type');
-            $table->integer('document_number');
+            $table->string('box_number', 255)->unique();
+            $table->string('we_received', 255);
+            $table->string('address', 255);
+            $table->string('city', 255);
+            $table->string('document_type', 255);
+            $table->string('document_number', 255)->nullable();
             $table->date('date');
-            $table->integer('value');
-            $table->string('value_in_letters');
-            $table->string('description');
+            $table->string('value', 255);
+            $table->string('value_in_letters', 255);
+            $table->text('description');
             $table->timestamps();
         });
     }

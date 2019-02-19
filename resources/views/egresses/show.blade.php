@@ -8,7 +8,7 @@
                     <a href="{{ route('egresses.index') }}" class="btn btn-outline-warning btn-show-egress">Volver</a>
                     <a href="{{ route('egresses.edit', $egress->id) }}" class="btn btn-outline-primary">Editar</a>
                     <form class="form-inline" method="post" action="{{route('egresses.destroy', $egress->id) }}" 
-                        onsubmit="return confirm('Estas seguro?')">
+                        onsubmit="return confirm('¿Estas seguro de borrar el egreso #{{$egress->exit_number}}?')">
                         
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -26,8 +26,8 @@
 
                     <div class="form-group">
                         <label class="label-uno-egress">www.vinixcode.com</label><br>
+                        <label class="label-dos-invoices">Egreso</label><br>
                         <label class="label-tres-egress">Calle 87 Sur # 55-695, Apto. 1603</label><br>
-                        <label class="label-cuatro-egress">N° 055460</label><br>
                         <label class="label-cinco-egress">La Estrella, Antioquia</label><br>
                         <label class="label-seis-egress">NIT: 901116567</label>
                     </div>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="label-show-egress">Girado</label>
+                            <label class="label-show-egress">Girado A</label>
                             <p>{{ $egress->turned }}</p>
                         </div>
 
@@ -56,13 +56,13 @@
                         </div> 
 
                         <div class="col-sm-4">
-                            <label class="label-show-egress">Numero de Documento</label>
+                            <label class="label-show-egress">N&uacute;mero de Documento</label>
                             <p>{{ $egress->document_number }}</p>
                         </div> 
 
                         <div class="col-sm-4">
                             <label class="label-show-egress">Valor</label>
-                            <p>{{ number_format($egress->value) }}</p>
+                            <p>$ {{ number_format($egress->value) }}</p>
                         </div> 
 
                         <div class="col-sm-4">
@@ -74,7 +74,7 @@
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="col-sm-12">
-                                <label style="font-weight: bold;">Descripcion:</label>
+                                <label style="font-weight: bold;">Descripci&oacute;n</label>
                                 <p>{{ $egress->description }}</p>
                             </div>
                         </div>

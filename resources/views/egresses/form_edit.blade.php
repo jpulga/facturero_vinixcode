@@ -11,7 +11,7 @@
             </div>
 
             <div class="col-sm-3">
-                <label>Girado</label>
+                <label>Girado A</label>
                 <input type="text" class="form-control" name="turned" value="{{ $egress->turned }}">
             </div>
 
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-sm-4">             
-                <label>Valor e Letras</label>
+                <label>Valor en Letras</label>
                 <input type="text" class="form-control" name="value_in_letters" value="{{ $egress->value_in_letters }}">
             </div>
         </div> 

@@ -12,11 +12,11 @@
 
             <div class="col-sm-3">
                 <label>Fecha</label>
-                <input type="text" class="form-control" name="date" value="{{ $cash_receipt->date }}">
+                <input type="date" class="form-control" name="date" value="{{ $cash_receipt->date }}">
             </div>
 
             <div class="col-sm-3">
-                <label>Recibimos</label>
+                <label>Recibimos De</label>
                 <input type="text" class="form-control" name="we_received" value="{{ $cash_receipt->we_received }}">
             </div>
 

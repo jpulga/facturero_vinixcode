@@ -15,14 +15,14 @@ class CreateEgressesTable extends Migration
     {
         Schema::create('egresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('exit_number');
-            $table->string('turned');
-            $table->string('document_type');
-            $table->integer('document_number');
+            $table->string('exit_number', 255)->unique();
+            $table->string('turned', 255);
+            $table->string('document_type', 255);
+            $table->string('document_number', 255)->nullable();
             $table->date('date');
-            $table->integer('value');
-            $table->string('value_in_letters');
-            $table->string('description');
+            $table->string('value', 255);
+            $table->string('value_in_letters', 255);
+            $table->text('description');
             $table->timestamps();
         });
     }

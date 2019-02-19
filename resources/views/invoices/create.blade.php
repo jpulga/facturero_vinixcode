@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-@include('invoices.fragment.info')
+@include('fragment.info')
 
 <div id="invoice">
     <form action="{{ route('invoices.store') }}" method="POST" class="form-invoice">

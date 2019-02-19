@@ -11,7 +11,7 @@
     {!! Form::close() !!}
 </nav>
 <br>
-@include('invoices.fragment.info')
+@include('fragment.info')
 <div class="container container-principal">
     @if($invoices->count())
     <table class="table table-hover">
@@ -55,8 +55,7 @@
     @else
     <div class="invoice-empty">
         <p class="invoice-empty-title">
-            No hay Facturas.
-            <a href="{{route('invoices.create')}}">Crea Ahora!!</a>
+            No existen facturas. <a href="{{route('invoices.create')}}">Crea una</a>.
         </p>
     </div>
     @endif

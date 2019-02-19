@@ -38,21 +38,19 @@ class EgressController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'exit_number'      => 'required',
-            'turned'           => 'required',
+            'exit_number'      => 'required|alpha_dash|unique:egresses',
+            'turned'           => 'required|max:255',
             'document_type'    => 'required',
-            'document_number'  => 'required',
-            'date'             => 'required',
-            'value'            => 'required',
-            'value_in_letters' => 'required',
+            'date'             => 'required|date_format:Y-m-d',
+            'value'            => 'required|max:255',
+            'value_in_letters' => 'required|max:255',
             'description'      => 'required'
         ]);
 
         $datos = $request->all();
-        Egress::create($datos);
+        $egress = Egress::create($datos);
 
-        return redirect()->route('egresses.index')
-                        ->with('success', 'Se creo el egreso satisfactoriamente.');
+        return redirect()->route('egresses.index')->with('success', 'El egreso #' . $egress->exit_number . ' fue creado exitosamente.');
     }
 
     /**
@@ -88,19 +86,17 @@ class EgressController extends Controller
     public function update(Request $request, Egress $egress)
     {
         $request->validate([
-            'exit_number'      => 'required',
-            'turned'           => 'required',
+            'exit_number'      => 'required|alpha_dash|unique:egresses,exit_number,'.$egress->id.',id',
+            'turned'           => 'required|max:255',
             'document_type'    => 'required',
-            'document_number'  => 'required',
-            'date'             => 'required',
-            'value'            => 'required',
-            'value_in_letters' => 'required',
+            'date'             => 'required|date_format:Y-m-d',
+            'value'            => 'required|max:255',
+            'value_in_letters' => 'required|max:255',
             'description'      => 'required'
         ]);
 
         $egress->update($request->all());
-        return redirect()->route('egresses.index')
-                        ->with('success', 'Se actualizo el egreso satisfactoriamente.');
+        return redirect()->route('egresses.index')->with('success', 'El egreso #' . $egress->exit_number . ' fue actualizado exitosamente.');
     }
 
     /**
@@ -114,6 +110,6 @@ class EgressController extends Controller
         $egress = Egress::find($id);
         $egress->delete();
 
-        return back()->with('info', 'El egreso fue eliminado');
+        return redirect()->route('egresses.index')->with('success', 'El egreso #' . $egress->exit_number . ' fue eliminado exitosamente.');
     }
 }

@@ -10,12 +10,7 @@
     {!! Form::close() !!}
 </nav>
 <br>
-@if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-@endif
-<br>
+@include('fragment.info')
 <div class="container container-principal">
     @if($egresses->count())
     <table class="table table-hover">
@@ -28,6 +23,8 @@
                 <th>Fecha</th>
                 <th>Valor</th>
                 <th>Descripcion</th>
+                <th>Fecha de Creacion</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -38,13 +35,14 @@
                 <td>{{$egress->document_type}}</td>
                 <td>{{$egress->document_number}}</td>
                 <td>{{$egress->date}}</td>
-                <td>{{ number_format ($egress->value) }}</td>
+                <td>$ {{ number_format ($egress->value) }}</td>
                 <td>{{$egress->description}}</td>
-                <td class="text-right">
+                <td>{{$egress->created_at->diffForHumans()}}</td>
+                <td>
                     <a href="{{ route('egresses.show', $egress->id) }}" class="btn btn-outline-dark btn-sm">Ver</a>
                     <a href="{{ route('egresses.edit', $egress->id) }}" class="btn btn-outline-primary btn-sm">Editar</a>
                     <form class="form-inline" method="post" action="{{route('egresses.destroy', $egress)}}"
-                                onsubmit="return confirm('Estas seguro que deseas borrar el recibo de caja N° {{$egress->exit_number}}')">
+                                onsubmit="return confirm('¿Estas seguro de borrar el egreso #{{$egress->exit_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="submit" value="Borrar" class="btn btn-outline-danger btn-sm">
@@ -58,8 +56,7 @@
     @else
     <div class="egress-empty">
         <p class="egress-empty-title text-center">
-            No hay Recibos de Cajas.
-            <a href="{{ route('egresses.create') }}">Crea Ahora!</a>
+            No existen egresos. <a href="{{route('egresses.create')}}">Crea uno</a>.
         </p>
     </div>
     @endif

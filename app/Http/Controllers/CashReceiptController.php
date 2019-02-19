@@ -23,23 +23,21 @@ class CashReceiptController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'box_number'       => 'required',
-            'we_received'      => 'required',
-            'address'          => 'required',
-            'city'             => 'required',
+            'box_number'       => 'required|alpha_dash|unique:cash_receipts',
+            'we_received'      => 'required|max:255',
+            'address'          => 'required|max:255',
+            'city'             => 'required|max:255',
             'document_type'    => 'required',
-            'document_number'  => 'required',
-            'date'             => 'required',
-            'value'            => 'required',
-            'value_in_letters' => 'required',
+            'date'             => 'required|date_format:Y-m-d',
+            'value'            => 'required|max:255',
+            'value_in_letters' => 'required|max:255',
             'description'      => 'required'
         ]);
 
         $datos = $request->all();
-        CashReceipt::create($datos);
+        $cash_receipt = CashReceipt::create($datos);
 
-        return redirect()->route('cash_receipts.index')
-                         ->with('success', 'Tu recibo fue creado satisfactoriamente');
+        return redirect()->route('cash_receipts.index')->with('success', 'El recibo de caja #' . $cash_receipt->box_number . ' fue creado exitosamente.');
     }
 
     public function show($id)
@@ -56,21 +54,20 @@ class CashReceiptController extends Controller
     public function update(Request $request, CashReceipt $cash_receipt)
     {
         $request->validate([
-            'box_number'       => 'required',
-            'we_received'      => 'required',
-            'address'          => 'required',
-            'city'             => 'required',
+            'box_number'       => 'required|alpha_dash|unique:cash_receipts,box_number,'.$cash_receipt->id.',id',
+            'we_received'      => 'required|max:255',
+            'address'          => 'required|max:255',
+            'city'             => 'required|max:255',
             'document_type'    => 'required',
-            'document_number'  => 'required',
-            'date'             => 'required',
-            'value'            => 'required',
-            'value_in_letters' => 'required',
+            'date'             => 'required|date_format:Y-m-d',
+            'value'            => 'required|max:255',
+            'value_in_letters' => 'required|max:255',
             'description'      => 'required'
         ]);
 
         $cash_receipt->update($request->all());
-        return redirect()->route('cash_receipts.index')
-                        ->with('info', 'El Recibo de caja fue actualizado');
+        
+        return redirect()->route('cash_receipts.index')->with('success', 'El recibo de caja #' . $cash_receipt->box_number . ' fue actualizada exitosamente.');
     }
 
     public function destroy($id)
@@ -78,6 +75,6 @@ class CashReceiptController extends Controller
         $cash_receipt = CashReceipt::find($id);
         $cash_receipt->delete();
 
-        return back()->with('info', 'El Recibo de caja fue eliminado');
+        return redirect()->route('cash_receipts.index')->with('success', 'El recibo de caja #' . $cash_receipt->box_number . ' fue eliminado exitosamente.');
     }
 }
