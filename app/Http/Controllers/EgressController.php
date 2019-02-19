@@ -15,7 +15,8 @@ class EgressController extends Controller
     public function index(Request $request)
     {
         $egresses = Egress::turned($request->get('Girado'))->orderBy('id', 'DESC')->paginate(20);
-        return view('egresses.index', compact('egresses'));
+        $title = 'Egresos';
+        return view('egresses.index', compact('egresses', 'title'));
     }
 
     /**
@@ -26,7 +27,8 @@ class EgressController extends Controller
     public function create()
     {
         $count = \DB::table('egresses')->select('exit_number')->limit(1)->orderBy('exit_number', 'desc')->value('exit_number');
-        return view('egresses.create', compact('count'));
+        $title = 'Crear Egreso';
+        return view('egresses.create', compact('count', 'title'));
     }
 
     /**
@@ -62,7 +64,8 @@ class EgressController extends Controller
     public function show($id)
     {
         $egress = Egress::find($id);
-        return view('egresses.show', compact('egress'));
+        $title = 'Ver Egreso #' . $egress->exit_number;
+        return view('egresses.show', compact('egress', 'title'));
     }
 
     /**
@@ -73,7 +76,8 @@ class EgressController extends Controller
      */
     public function edit(Egress $egress)
     {
-        return view('egresses.edit', compact('egress'));
+        $title = 'Editar Egreso #' . $egress->exit_number;
+        return view('egresses.edit', compact('egress', 'title'));
     }
 
     /**

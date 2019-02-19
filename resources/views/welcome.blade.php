@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Facturero Vinix Code</title>
+        <title>Facturero - Vinix Code</title>
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/override.css">
         <link rel="stylesheet" type="text/css" href="/css/app.css">

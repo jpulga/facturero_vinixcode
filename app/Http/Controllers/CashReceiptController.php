@@ -11,13 +11,15 @@ class CashReceiptController extends Controller
     public function index(Request $request)
     {
         $cash_receipts = CashReceipt::we_received($request->get('Recibimos'))->OrderBy('id', 'desc')->paginate(20);
-        return view('cash_receipts.index', compact('cash_receipts'));
+        $title = 'Recibos de Caja';
+        return view('cash_receipts.index', compact('cash_receipts', 'title'));
     }
 
    public function create()
     {
         $count = \DB::table('cash_receipts')->select('box_number')->limit(1)->orderBy('box_number', 'desc')->value('box_number');
-        return view('cash_receipts.create', compact('count'));
+        $title = 'Crear Recibo de Caja';
+        return view('cash_receipts.create', compact('count', 'title'));
     }
 
     public function store(Request $request)
@@ -43,12 +45,14 @@ class CashReceiptController extends Controller
     public function show($id)
     {
         $cash_receipt = CashReceipt::find($id);
-        return view('cash_receipts.show', compact('cash_receipt'));
+        $title = 'Ver Recibo de Caja #' . $cash_receipt->box_number;
+        return view('cash_receipts.show', compact('cash_receipt', 'title'));
     }
 
     public function edit(CashReceipt $cash_receipt)
     {
-        return view('cash_receipts.edit', compact('cash_receipt'));
+        $title = 'Editar Recibo de Caja #' . $cash_receipt->box_number;
+        return view('cash_receipts.edit', compact('cash_receipt', 'title'));
     }
 
     public function update(Request $request, CashReceipt $cash_receipt)

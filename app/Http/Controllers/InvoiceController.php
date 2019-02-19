@@ -13,14 +13,16 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::client($request->get('cliente'))->orderBy('created_at', 'desc')
             ->paginate(20);
+        $title = 'Facturas';
 
-        return view('invoices.index', compact('invoices'));
+        return view('invoices.index', compact('invoices', 'title'));
     }
 
     public function create()
     {
         $count = \DB::table('invoices')->select('invoice_number')->limit(1)->orderBy('invoice_number', 'desc')->value('invoice_number');
-        return view('invoices.create', compact('count'));
+        $title = 'Crear Factura';
+        return view('invoices.create', compact('count', 'title'));
     }
 
     public function store(Request $request)
@@ -64,13 +66,15 @@ class InvoiceController extends Controller
     public function show($id)
     {
         $invoice = Invoice::with('products')->findOrFail($id);
-        return view('invoices.show', compact('invoice'));
+        $title = 'Ver Factura #' . $invoice->invoice_number;
+        return view('invoices.show', compact('invoice', 'title'));
     }
 
     public function edit($id)
     {
         $invoice = Invoice::with('products')->findOrFail($id);
-        return view('invoices.edit', compact('invoice'));
+        $title = 'Editar Factura #' . $invoice->invoice_number;
+        return view('invoices.edit', compact('invoice', 'title'));
     }
 
     public function update(Request $request, $id)
