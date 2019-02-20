@@ -5,27 +5,27 @@
     <div class="form-row">
         <div class="form-group col-md-2">
             <label>N° de Factura</label>
-        <input type="text" class="form-control" name="invoice_number" value="{{ $invoice->invoice_number }}">
+        <input type="text" class="form-control" v-model="form.invoice_number" name="invoice_number" value="{{ $invoice->invoice_number }}">
         </div>
 
         <div class="form-group col-md-2">
             <label>Cliente</label>
-            <input type="text" class="form-control" name="client" value="{{ $invoice->client }}">
+            <input type="text" class="form-control" v-model="form.client" name="client" value="{{ $invoice->client }}">
         </div>
 
         <div class="form-group col-md-2">
             <label>Fecha</label>
-            <input type="date" class="form-control" name="date" value="{{ $invoice->date }}">
+            <input type="date" class="form-control" v-model="form.date" name="date" value="{{ $invoice->date }}">
         </div>
 
         <div class="form-group col-md-2">
             <label>Fecha de Vencimiento</label>
-            <input type="date" class="form-control" name="expiration_date" value="{{ $invoice->expiration_date }}">
+            <input type="date" class="form-control" v-model="form.expiration_date" name="expiration_date" value="{{ $invoice->expiration_date }}">
         </div>
 
         <div class="form-group col-md-2">
             <label>Tipo de Documento</label>
-            <select class="form-control" name="document_type">
+            <select class="form-control" v-model="form.document_type" name="document_type">
                 <option value="NIT">Nit</option>
                 <option value="Cedula">Cédula</option>
             </select>
@@ -33,24 +33,24 @@
 
         <div class="form-group col-md-2">
             <label>Numero de Documento</label>
-            <input type="text" class="form-control" name="document_number" value="{{ $invoice->document_number }}">
+            <input type="text" class="form-control" v-model="form.document_number" name="document_number" value="{{ $invoice->document_number }}">
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>Direccion</label>
-            <input type="text" class="form-control" name="address" value="{{ $invoice->address }}">
+            <input type="text" class="form-control" v-model="form.address" name="address" value="{{ $invoice->address }}">
         </div>
 
         <div class="form-group col-md-3">
             <label>Telefono</label>
-            <input type="text" class="form-control" name="cellphone" value="{{ $invoice->cellphone }}">
+            <input type="text" class="form-control" v-model="form.cellphone" name="cellphone" value="{{ $invoice->cellphone }}">
         </div>
 
         <div class="form-group col-md-3">
             <label>Moneda</label>
-            <select class="form-control" name="currency">
+            <select class="form-control" v-model="form.currency" name="currency">
                 <option value="USD">USD (Dolares Americanos)</option>
                 <option value="COP">COP (Pesos Colombianos)</option>
             </select>
@@ -58,7 +58,7 @@
 
         <div class="form-group col-md-3">
             <label>Estado</label>
-            <select class="form-control" name="state" value="{{ $invoice->state }}">
+            <select class="form-control" v-model="form.state" name="state" value="{{ $invoice->state }}">
                 <option value="Debe">Debe</option>
                 <option value="Paga">Paga</option>
             </select>
@@ -66,13 +66,13 @@
 
         <div class="form-group col-md-3" hidden>
             <label>Compañia de Origen</label>
-            <input type="text" class="form-control" name="company_origin" value="Vinix Code S.A.S">
+            <input type="text" class="form-control" v-model="form.company_origin" name="company_origin" value="Vinix Code S.A.S">
         </div>
     </div>
 
     <div class="mb-3">
         <label class="text-center">Notas</label>
-        <textarea class="form-control" name="notes">{{ $invoice->notes }}</textarea>
+        <textarea class="form-control" v-model="form.notes" name="notes">{{ $invoice->notes }}</textarea>
     </div>
     <hr>
 
@@ -116,7 +116,7 @@
                 <td class="table-empty" colspan="2"></td>
                 <td class="table-label">Descuento</td>
                 <td class="table-discount" :class="{'table-error': errors.discount}">
-                    <input type="text" class="table-discount_input" name="discount" value="{{ $invoice->discount }}">
+                    <input type="text" class="table-discount_input" v-model="form.discount" name="discount" value="{{ $invoice->discount }}">
                 </td>
             </tr>
             <tr>
