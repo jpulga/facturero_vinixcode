@@ -18,8 +18,8 @@
             <div class="col-sm-3">             
                 <label>Tipo de Documento</label>
                 <select class="form-control" name="document_type">
-                    <option value="Nit">Nit</option>
-                    <option value="Cedula">Cédula</option>
+                    <option value="NIT" @if($egress->document_type == 'NIT') selected @endif>Nit</option>
+                    <option value="Cedula" @if($egress->document_type == 'Cedula') selected @endif>Cédula</option>
                 </select>
             </div>
 

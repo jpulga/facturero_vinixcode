@@ -30,8 +30,8 @@
             <div class="col-sm-4">             
                 <label>Tipo de Documento</label>
                 <select class="form-control" name="document_type">
-                    <option value="{{ $cash_receipt->document_type }}">Nit</option>
-                    <option value="{{ $cash_receipt->document_type }}">Cédula</option>
+                    <option value="NIT" @if($cash_receipt->document_type == 'NIT') selected @endif>Nit</option>
+                    <option value="Cedula" @if($cash_receipt->document_type == 'Cedula') selected @endif>Cédula</option>
                 </select>
             </div>
 

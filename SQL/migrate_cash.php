@@ -2,8 +2,8 @@
 $usuario = "root";
 $contrasena = "root";  
 $servidor = "localhost";
-$basededatos_vieja = "facturero_vinixcode_old";
-$basededatos_nueva = "facturero_vinixcode";
+$basededatos_vieja = "facturero_vinix";
+$basededatos_nueva = "facturero_v2";
 
 $conexion = mysqli_connect( $servidor, $usuario, $contrasena ) or die ("No se ha podido conectar al servidor de Base de datos");
 $db_vieja = mysqli_select_db( $conexion, $basededatos_vieja ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
@@ -17,6 +17,9 @@ while ($fila = mysqli_fetch_array( $resultado ))
 	$rcaja_viejos[] = $fila;
 }
 
+var_dump($rcaja_viejos);
+die();
+
 $db_nueva = mysqli_select_db( $conexion, $basededatos_nueva ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 
 foreach ($rcaja_viejos as $recibo) {
@@ -25,7 +28,7 @@ foreach ($rcaja_viejos as $recibo) {
 	$address = $recibo['direccion'];
 	$city = $recibo['ciudad'];
 	$document_type = $recibo['tipo_documento'];
-	$document_number = $recibo['$numero_documento'];
+	$document_number = $recibo['numero_documento'];
 	$date = $recibo['fecha'];
     $value = str_replace(',', '', $recibo['valor']);
     $value_in_letters = $recibo['valor_letras'];
