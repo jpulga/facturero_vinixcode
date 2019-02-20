@@ -293,6 +293,10 @@ body {
     padding-top: 10px;
 }
 
+.documento{
+    width: 150px;
+}
+
 /*EGRESS*/
 
 .div-create-egress{
@@ -363,6 +367,10 @@ body {
 .show-egress{
     margin-left: 160px;
     margin-top: 120px;
+}
+
+.descripcion{
+    width: 350px;
 }
 
 

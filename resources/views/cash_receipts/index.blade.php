@@ -20,10 +20,10 @@
                 <th>N. Caja</th>              
                 <th>Recibimos</th>
                 <th>Tipo de Documento</th>
-                <th>Numero de Documento</th>
+                <th >Numero de Documento</th>
                 <th>Fecha</th>
                 <th>Valor</th>
-                <th>Descripcion</th>
+                <th class="descripcion">Descripcion</th>
                 <th>Fecha de Creacion</th>
                 <th>Acciones</th>
             </tr>

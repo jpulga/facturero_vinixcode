@@ -22,7 +22,7 @@
                 <th>Numero de Documento</th>
                 <th>Fecha</th>
                 <th>Valor</th>
-                <th>Descripcion</th>
+                <th class="descripcion">Descripcion</th>
                 <th>Fecha de Creacion</th>
                 <th>Acciones</th>
             </tr>

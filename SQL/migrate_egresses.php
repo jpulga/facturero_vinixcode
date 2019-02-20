@@ -2,8 +2,8 @@
 $usuario = "root";
 $contrasena = "root"; 
 $servidor = "localhost";
-$basededatos_vieja = "facturero_vinix";
-$basededatos_nueva = "facturero_v2";
+$basededatos_vieja = "facturero_vinixcode_old";
+$basededatos_nueva = "facturero_vinixcode";
 
 $conexion = mysqli_connect( $servidor, $usuario, $contrasena ) or die ("No se ha podido conectar al servidor de Base de datos");
 $db_vieja = mysqli_select_db( $conexion, $basededatos_vieja ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
@@ -38,5 +38,3 @@ foreach ($egresos_viejos as $egreso) {
 	mysqli_query( $conexion, $sql );
 	echo "Egreso #" . $exit_number . " migrado exitosamente.<br />";
 }
-
-//echo 'Egresos migrados exitosamente.';

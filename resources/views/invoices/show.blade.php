@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" media=""href="/css/invoices.css">
+<link rel="stylesheet" type="text/css" media="print" href="/css/invoices.css">
 @endsection
 
 @section('content')
