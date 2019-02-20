@@ -1,9 +1,9 @@
 <?php
 $usuario = "root";
-$contrasena = "root";  
+$contrasena = "r00t!";  
 $servidor = "localhost";
 $basededatos_vieja = "facturero_vinix";
-$basededatos_nueva = "facturero_v2";
+$basededatos_nueva = "facturero_vinix_v2";
 
 $conexion = mysqli_connect( $servidor, $usuario, $contrasena ) or die ("No se ha podido conectar al servidor de Base de datos");
 $db_vieja = mysqli_select_db( $conexion, $basededatos_vieja ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
@@ -16,9 +16,6 @@ while ($fila = mysqli_fetch_array( $resultado ))
 {
 	$rcaja_viejos[] = $fila;
 }
-
-var_dump($rcaja_viejos);
-die();
 
 $db_nueva = mysqli_select_db( $conexion, $basededatos_nueva ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 

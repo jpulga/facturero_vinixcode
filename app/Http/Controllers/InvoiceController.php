@@ -11,7 +11,7 @@ class InvoiceController extends Controller
 {
     public function index(Request $request)
     {
-        $invoices = Invoice::client($request->get('cliente'))->orderBy('created_at', 'desc')
+        $invoices = Invoice::client($request->get('cliente'))->orderBy('id', 'desc')
             ->paginate(20);
         $title = 'Facturas';
 
