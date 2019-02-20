@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('styles')
+<link rel="stylesheet" type="text/css" href="/css/invoices.css">
+@endsection
+
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
