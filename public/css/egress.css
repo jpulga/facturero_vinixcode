@@ -1,0 +1,41 @@
+.panel-heading,
+.navbar {
+  display: none;
+}
+
+.panel-default{
+  padding-top: 50px;
+}
+
+.img-uno-egress{
+  margin-left: 80px;
+}
+
+.label-uno-egress{
+  margin-left: 90px;
+}
+
+.label-dos-egress{
+  margin-left: 135px;
+}
+
+.label-tres-egress{
+  margin-left: 40px;
+}
+
+.label-cinco-egress{
+  margin-left: 85px;
+}
+
+.label-seis-egress{
+  margin-left: 110px;
+}
+
+.label-show-egress{
+  font-weight: bold;
+}
+
+.show-egress{
+    padding-top: 150px;
+    margin-left: 100px;
+}

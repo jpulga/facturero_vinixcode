@@ -240,6 +240,10 @@ body {
     padding-left: 180px;
 }
 
+.label-dos-cash{
+    padding-left: 200px;
+}
+
 .label-tres-cash{
     padding-left: 135px;
 }
@@ -324,6 +328,10 @@ body {
     padding-left: 140px;
 }
 
+.label-dos-egress{
+    padding-left: 180px;
+}
+
 .label-tres-egress{
     padding-left: 85px;
 }
@@ -333,7 +341,7 @@ body {
 }
 
 .label-cinco-egress{
-    padding-left: 130px;
+    padding-left: 132px;
 }
 
 .label-seis-egress{

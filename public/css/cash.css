@@ -1,0 +1,41 @@
+.panel-heading,
+.navbar {
+  display: none;
+}
+
+.panel-default{
+    padding-top: 50px;
+}
+
+.img-uno-cash{
+margin-left: 80px;
+}
+
+.label-uno-cash{
+margin-left: 90px;
+}
+
+.label-dos-cash{
+margin-left: 105px;
+}
+
+.label-tres-cash{
+margin-left: 30px;
+}
+
+.label-cinco-cash{
+margin-left: 80px;
+}
+
+.label-seis-cash{
+margin-left: 100px;
+}
+
+.label-show-cash{
+font-weight: bold;
+}
+
+.label-show{
+    padding-top: 150px;
+    margin-left: 200px;
+}

@@ -2,3 +2,48 @@
 .navbar {
   display: none;
 }
+
+.panel-default{
+  padding-top: 50px;
+}
+
+.img-uno-invoices{
+  margin-left: 80px;
+}
+
+.label-uno-invoices{
+  margin-left: 90px;
+}
+
+.label-dos-invoices{
+  margin-left: 100px;
+}
+
+.label-tres-invoices{
+  margin-left: 40px;
+}
+
+.label-cinco-invoices{
+  margin-left: 80px;
+}
+
+.label-seis-invoices{
+  margin-left: 100px;
+}
+
+.label-show-invoices{
+  font-weight: bold;
+}
+
+.firma-invoices{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.firma2-invoices{
+  text-align: center;
+}
+
+.cortar{
+  width: 140px;
+}

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" href="/css/invoices.css">
+<link rel="stylesheet" type="text/css" media=""href="/css/invoices.css">
 @endsection
 
 @section('content')
@@ -54,9 +54,9 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label class="label-show-invoices">Teléfono</label>
-                            <p>{{$invoice->cellphone}}</p>
-                        </div> 
+                            <label style="font-weight: bold;">Fecha de Factura</label>
+                            <p>{{$invoice->date}}</p>
+                        </div>
                     </div>
 
                     <div class="col-xs-12">
@@ -71,19 +71,19 @@
 
                 <div class="col-sm-4 show-invoices">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <label style="font-weight: bold;">Fecha de Factura</label>
-                            <p>{{$invoice->date}}</p>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label style="font-weight: bold;">Vencimiento de Factura</label>
-                            <p>{{$invoice->expiration_date}}</p>
-                        </div>
+                    <div class="col-sm-6">
+                            <label class="label-show-invoices">Teléfono</label>
+                            <p>{{$invoice->cellphone}}</p>
+                        </div> 
 
                         <div class="col-sm-6">
                             <label style="font-weight: bold;">Tipo de Documento</label>
                             <p>{{$invoice->document_type}}</p>
+                        </div>
+
+                         <div class="col-sm-6">
+                            <label style="font-weight: bold;">Vencimiento de Factura</label>
+                            <p>{{$invoice->expiration_date}}</p>
                         </div>
                         
                         <div class="col-sm-6">
@@ -99,9 +99,9 @@
                 <thead>
                     <tr>
                         <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
+                        <th class="cortar">Precio</th>
+                        <th class="cortar">Cantidad</th>
+                        <th class="cortar">Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -118,17 +118,17 @@
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Subtotal</td>
-                        <td class="table-amount">$ {{ number_format ($invoice->sub_total)}}</td>
+                        <td class="table-amount text-right">$ {{ number_format ($invoice->sub_total)}}</td>
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Descuento</td>
-                        <td class="table-amount">$ {{$invoice->discount}}</td>
+                        <td class="table-amount text-right">$ {{$invoice->discount}}</td>
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Total a Pagar</td>
-                        <td class="table-amount">$ {{ number_format ($invoice->grand_total)}}</td>
+                        <td class="table-amount text-right">$ {{ number_format ($invoice->grand_total)}}</td>
                     </tr>
                 </tfoot>
             </table>

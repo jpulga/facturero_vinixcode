@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('styles')
+<link rel="stylesheet" type="text/css" media="print"href="/css/egress.css">
+@endsection
+
 @section('content')
     <div class="panel panel-default panel-default-egress">
         <div class="panel-heading">
@@ -26,7 +30,7 @@
 
                     <div class="form-group">
                         <label class="label-uno-egress">www.vinixcode.com</label><br>
-                        <label class="label-dos-invoices">Egreso</label><br>
+                        <label class="label-dos-egress">Egreso</label><br>
                         <label class="label-tres-egress">Calle 87 Sur # 55-695, Apto. 1603</label><br>
                         <label class="label-cinco-egress">La Estrella, Antioquia</label><br>
                         <label class="label-seis-egress">NIT: 901116567</label>
