@@ -79,7 +79,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <label style="font-weight: bold;">Descripci&oacute;n</label>
-                                <p>{{ $egress->description }}</p>
+                                <p>{!! nl2br($egress->description) !!}</p>
                             </div>
                         </div>
                     </div>

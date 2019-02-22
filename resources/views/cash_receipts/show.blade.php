@@ -88,7 +88,7 @@
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="col-sm-12">
-                                <label style="font-weight: bold;">Descripcion:</label>
+                                <label style="font-weight: bold;">Descripci&oacute;n</label>
                                 <p>{!! nl2br($cash_receipt->description) !!}</p>
                             </div>
                         </div>
