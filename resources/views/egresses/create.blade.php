@@ -3,15 +3,19 @@
 @section('content')
 @include('fragment.info')
 
-<div id="egress">
-    <div class="panel panel-default" v-clock>
-        <div class="panel-heading">
-            <div class="clearfix div-create-egress">
-                <span class="panel-title">Crear Egreso</span>
-                <a href="{{ route('egresses.index') }}" class="btn btn-outline-warning buttom-create-egress">Volver</a>
-            </div>
+<div class="container my-4 d-c-e">
+    <div class="px-4 clearfix">
+        <div class="float-left">
+            <h3 class="t-c-e">Crear egreso</h3>
         </div>
-        @include('egresses.form')    
+        
+        <div class="float-right action-buttons mt-2 mt-sm-0 ml-sm-1">
+            <a href="{{ route('egresses.index') }}" class="btn btn-warning d-none d-sm-block">Volver</a>
+        </div>            
     </div>
+</div>
+
+<div class="container">       
+    @include('egresses.form')
 </div>
 @endsection

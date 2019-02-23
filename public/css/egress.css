@@ -1,41 +1,36 @@
-.panel-heading,
-.navbar {
-  display: none;
+.i-s-e{
+  width: 50%;
+  margin-left: 18%;
 }
 
-.panel-default{
-  padding-top: 50px;
+.t-s-e-1{
+  margin-left: 23%;
 }
 
-.img-uno-egress{
-  margin-left: 80px;
+.t-s-e-2{
+  margin-left: 37%;
 }
 
-.label-uno-egress{
-  margin-left: 90px;
+.t-s-e-3{
+  margin-left: 7%;
 }
 
-.label-dos-egress{
-  margin-left: 135px;
+.t-s-e-4{
+  margin-left: 22%;
 }
 
-.label-tres-egress{
-  margin-left: 40px;
+.t-s-e-5{
+  margin-left: 27%;
 }
 
-.label-cinco-egress{
-  margin-left: 85px;
-}
-
-.label-seis-egress{
-  margin-left: 110px;
-}
-
-.label-show-egress{
+.t-s-e{
   font-weight: bold;
 }
 
-.show-egress{
-    padding-top: 150px;
-    margin-left: 100px;
+.f-s-e{
+  margin-top: 10%;
+}
+
+.footer{
+  display: none;
 }
