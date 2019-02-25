@@ -7,93 +7,82 @@
 @section('content')
 
 <div class="container my-4">
-    <div class="table-responsive">
-        <table class="table table-borderless">
-        <thead>
-            <tr></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/svg/logo.png" class="i-s-e"/></td>
-                <td class="t-s-e">N° Egreso</td>
-                <td></td>
-                <td class="t-s-e">Girado A</td>
-                <td></td>
-                <td class="t-s-e">Fecha</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-e-1">www.vinixcode.com</h6></td>
-                <td>{{$egress->exit_number}}</td>
-                <td></td>
-                <td>{{ $egress->turned }}</td>
-                <td></td>
-                <td>{{ $egress->date }}</td>
-              
-            </tr>
-            <tr>
-                <td><h6 class="t-s-e-2">Egreso</h6></td>
-                <td class="t-s-e">Tipo de Documento</td>
-                <td></td>
-                <td class="t-s-e">N&uacute;mero de Documento</td>
-                <td></td>
-                <td class="t-s-e">Valor</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-e-3">Calle 87 Sur # 55-695, Apto. 1603</h6></td>
-                <td>{{ $egress->document_type }}</td>
-                <td></td>
-                <td>{{ $egress->document_number }}</td>
-                <td></td>
-                <td>$ {{ number_format($egress->value) }}</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-e-4">La Estrella, Antioquia</h6></td>
-                <td colspan="4" class="t-s-e">La suma de</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-e-5">NIT: 901116567</h6></td>
-                <td colspan="4">{{ $egress->value_in_letters }}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="4" class="t-s-e">Descripci&oacute;n</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="4">{!! nl2br($egress->description) !!}</td>
-            </tr> 
-        </tbody>
-        </table>
-
-        <table class="table table-borderless f-s-e">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Elaboro</th>
-                <th>Reviso</th>
-                <th>Aprobo</th>
-                <th>Firma y Sello</th>
-                <th></th>
-            </tr>
-        </thead>
-        </table>
+    <div class="row my-2">
+        <div class="col col-md-4 text-center">
+            <img height="60" src="/svg/logo.png" />
+            <p class="mt-4 egresses-legend">
+                Vinix Code SAS<br />
+                www.vinixcode.com<br />
+                NIT: 901116567-1<br />
+                Calle 87 Sur # 55-695, Apto. 1603<br />
+                La Estrella, Antioquia<br />
+                Tel: 3282967<br />
+            </p>
+        </div>
+        <div class="col col-md-8">
+            <div class="row mb-2">
+                <div class="text-center">
+                    <h1 class="mb-4">Comprobante de Egreso</h1>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col col-md-4">
+                    <strong># Egreso</strong><br />
+                    {{$egress->exit_number}}
+                </div>
+                <div class="col col-md-4">
+                    <strong>Girado A</strong><br />
+                    {{ $egress->turned }}
+                </div>
+                <div class="col col-md-4">
+                    <strong>Fecha</strong><br />
+                    {{ $egress->date }}
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col col-md-4">
+                    <strong>Tipo de Documento</strong><br />
+                    {{ $egress->document_type }}
+                </div>
+                <div class="col col-md-4">
+                    <strong>N&uacute;mero de Documento</strong><br />
+                    {{ $egress->document_number }}
+                </div>
+                <div class="col col-md-4">
+                    <strong>Valor</strong><br />
+                    $ {{ number_format($egress->value) }}
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <strong>La suma de</strong><br />
+                    {{ $egress->value_in_letters }}
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <strong>Descripci&oacute;n</strong><br />
+                    {!! nl2br($egress->description) !!}
+                </div>
+            </div>
+        </div>
     </div>
+    </div>
+</div>
 
+<div class="container">
     <div class="footer">
         <a href="{{ route('egresses.index') }}" class="btn btn-warning b-c-e">Volver</a>
         <a href="{{ route('egresses.edit', $egress->id) }}" class="btn btn-success b-c-e">Editar</a>
-
+    
         <form class="form d-md-inline-block" method="post" action="{{route('egresses.destroy', $egress)}}"
                     onsubmit="return confirm('¿Estas seguro de borrar el egreso #{{$egress->exit_number}}?')">
             <input type="hidden" name="_method" value="delete">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <button title="Borrar Egreso" type="submit" class="btn btn-danger b-c-e">Borrar</button>
         </form>
-    </div>  
+    </div>
 </div>
-
 
 @endsection
 
