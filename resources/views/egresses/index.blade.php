@@ -72,8 +72,8 @@
         </table>
         {!! $egresses->render() !!}
         @else
-        <div class="invoice-empty">
-            <p class="invoice-empty-title">
+        <div class="egress-empty">
+            <p class="egress-empty-title">
                 No existen egresos. <a href="{{route('egresses.create')}}">Crea una</a>.
             </p>
         </div>
