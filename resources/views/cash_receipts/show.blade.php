@@ -3,22 +3,14 @@
 @section('styles')
 <link rel="stylesheet" type="text/css" media="print" href="/css/cash.css">
 @endsection
-
+ 
 @section('content')
 
 <div class="container my-4">
     <div class="table-responsive">
         <table class="table table-borderless">
         <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
+            <tr></tr>
         </thead>
         <tbody>
             <tr>

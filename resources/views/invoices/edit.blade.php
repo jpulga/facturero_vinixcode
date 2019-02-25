@@ -3,21 +3,26 @@
 @section('content')
 @include('fragment.info')
 
-<div id="invoice">
+<div id="invoice" v-clock>
+    <div class="container my-4 d-c-i">
     <form action="{{ route('invoices.update', $invoice->id) }}" method="POST" class="form-invoices">
-        <div class="panel panel-default" v-clock>
-            <div class="panel-heading">
-                <div class="clearfix div-edit-invoices">
-                    <span class="panel-title">Editar Factura</span>
-                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-edit-invoices">Volver</a>
-                </div>
-            </div>
 
+        <div class="px-4 clearfix">
+            <div class="float-left">
+                <h3 class="t-c-i">Editar factura</h3>
+            </div>
+        
+            <div class="float-right action-buttons mt-2 mt-sm-0 ml-sm-1">
+                <a href="{{ route('invoices.index') }}" class="btn btn-warning d-none d-sm-block">Volver</a>
+            </div>            
+        </div>
+    </div>
+
+        <div class="container">
             @include('invoices.form_edit')
-            
         </div>
     </form>
-</div>
+</div> 
 @endsection
 
 @push('scripts')

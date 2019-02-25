@@ -2,32 +2,48 @@
 
 @section('content')
 
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Facturas</a>
-    {!! Form::open(['route' => 'invoices.index', 'method' => 'GET', 'class' => 'form-inline', 'role' => 'search']) !!}
-        {!! Form::text('cliente', null, ['class' => 'form-control mr-sm-2 buscar-invoices', 'placeholder' => 'Buscar']) !!}
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        <a href="{{ route('invoices.create') }}" class="btn btn-outline-primary my-2 my-sm-0">Crear</a>
-    {!! Form::close() !!}
-</nav>
-<br>
 @include('fragment.info')
-<div class="container container-principal">
+<div class="container-fluid my-3">
     @if($invoices->count())
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>N° Factura</th>              
-                <th>Cliente</th>
-                <th>Fecha</th>
-                <th>Fecha de Vencimiento</th>
-                <th>Estado</th>
-                <th>Total</th>
-                <th>Fecha de Creacion</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="px-4 clearfix">
+        <div class="float-left">
+            <h3>Facturas</h3>
+        </div>
+        
+        <div class="float-right">
+            {!! Form::open(['route' => 'invoices.index', 'method' => 'GET', 'class' => 'form-inline my-2 my-md-0', 'role' => 'search']) !!}
+                <div class="input-group">
+                    {!! Form::text('cliente', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
+                    <div class="input-group-append">
+                        <button type="submit" class="input-group-text"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="action-buttons mt-2 mt-sm-0 ml-sm-1">
+                    <a href="{{ route('invoices.create') }}" class="btn btn-primary d-none d-sm-block">Crear</a>
+                    <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-lg btn-block d-block d-sm-none">Crear</a>
+                </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="table-responsive px-4">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>N° Factura</th>              
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Fecha de Vencimiento</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
             @foreach($invoices as $invoice)
             <tr>
                 <td>{{$invoice->invoice_number}}</td>
@@ -41,7 +57,7 @@
                     <a title="Ver Factura" href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm"><i class="far fa-file-pdf"></i></a>
                     <a title="Editar Factura" href="{{ route('invoices.edit', $invoice) }}" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i></a>
                     <a title="Clonar Factura" href="{{ route('invoices.duplicate', $invoice) }}" class="btn btn-outline-success btn-sm"><i class="far fa-clone"></i></a>
-                    <form class="form-inline" method="post" action="{{route('invoices.destroy', $invoice)}}"
+                    <form class="form-inline d-inline-block" method="post" action="{{route('invoices.destroy', $invoice)}}"
                                 onsubmit="return confirm('¿Estas seguro de borrar la factura #{{$invoice->invoice_number}}?')">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -51,14 +67,15 @@
             </tr>
             @endforeach
         </tbody>
-    </table>
-    {!! $invoices->render() !!}
-    @else
-    <div class="invoice-empty">
-        <p class="invoice-empty-title">
-            No existen facturas. <a href="{{route('invoices.create')}}">Crea una</a>.
-        </p>
-    </div>
-    @endif
+        </table>
+        {!! $invoices->render() !!}
+        @else
+        <div class="invoice-empty">
+            <p class="invoice-empty-title">
+                No existen egresos. <a href="{{route('invoices.create')}}">Crea una</a>.
+            </p>
+        </div>
+        @endif
+    </div>    
 </div>
 @endsection

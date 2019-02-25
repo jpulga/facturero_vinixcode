@@ -10,15 +10,7 @@
     <div class="table-responsive">
         <table class="table table-borderless">
         <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
+            <tr></tr>
         </thead>
         <tbody>
             <tr>
