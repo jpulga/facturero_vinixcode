@@ -36,11 +36,9 @@
       
         <div class="col-md-4">
             <h2 class="text-center">Recibos de Caja</h2>
-            <p><a href="{{ route('cash_receipts.index') }}" class="btn btn-lg btn-block btn-outline-secondary">Mis Recibos de Caja</a></p>
+            <p><a href="{{ route('cash_receipts.index') }}" class="btn btn-lg btn-block btn-outline-secondary">Mis Recibos de Caja &raquo;</a></p>
         </div>
     </div>
-
-    <hr>
 
      <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
@@ -50,10 +48,6 @@
         </div>
     </footer>
   </div>
-
-
-   
-    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -60,7 +60,7 @@
     <div class="form-group col-md-4">
         <label>Estado</label>
         <select class="form-control" v-model="form.state" name="state">
-            <option value="Debe" selected>Debe</option>
+            <option value="Debe">Debe</option>
             <option value="Paga">Paga</option>
         </select>
     </div>

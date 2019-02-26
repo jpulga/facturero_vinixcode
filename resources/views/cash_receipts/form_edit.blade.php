@@ -35,7 +35,7 @@
 
         <div class="form-group col-md-4">
             <label>Direccion</label>
-            <input type="text" class="form-control" name="address">
+            <input type="text" class="form-control" name="address" value="{{ $cash_receipt->address }}">
         </div>
 
         <div class="form-group col-md-4">
