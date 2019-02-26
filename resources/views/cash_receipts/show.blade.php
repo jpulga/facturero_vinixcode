@@ -1,90 +1,94 @@
 @extends('layouts.master')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" media="print" href="/css/cash.css">
+<link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
 @endsection
  
 @section('content')
 
-<div class="container my-4">
-    <div class="table-responsive">
-        <table class="table table-borderless">
-        <thead>
-            <tr></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/svg/logo.png" class="i-s-c"/></td>
-                <td class="t-s-c">N° Caja</td>
-                <td></td>
-                <td class="t-s-c">Recibimos De</td>
-                <td></td>
-                <td class="t-s-c">Fecha</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-c-1">www.vinixcode.com</h6></td>
-                <td>{{ $cash_receipt->box_number }}</td>
-                <td></td>
-                <td>{{ $cash_receipt->we_received }}</td>
-                <td></td>
-                <td>{{ $cash_receipt->date }}</td>
-              
-            </tr>
-            <tr>
-                <td><h6 class="t-s-c-2">Recibo de Caja</h6></td>
-                <td class="t-s-c">Tipo de Documento</td>
-                <td></td>
-                <td class="t-s-c">N&uacute;mero de Documento</td>
-                <td></td>
-                <td class="t-s-c">Ciudad</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-c-3">Calle 87 Sur # 55-695, Apto. 1603</h6></td>
-                <td>{{ $cash_receipt->document_type }}</td>
-                <td></td>
-                <td>{{ $cash_receipt->document_number }}</td>
-                <td></td>
-                <td>{{ $cash_receipt->city }}</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-c-4">La Estrella, Antioquia</h6></td>
-                <td colspan="2" class="t-s-c">Direccion</td>
-                <td colspan="2" class="t-s-c">Valor</td>
-                <td colspan="2" class="t-s-c">Valor en letras</td>
-            </tr>
-            <tr>
-                <td><h6 class="t-s-c-5">NIT: 901116567</h6></td>
-                <td colspan="2">{{ $cash_receipt->address }}</td>
-                <td colspan="2">${{ number_format ($cash_receipt->value) }}</td>
-                <td colspan="2">{{ $cash_receipt->value_in_letters }}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="4" class="t-s-c">Descripci&oacute;n</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="4">{!! nl2br($cash_receipt->description) !!}</td>
-            </tr> 
-        </tbody>
-        </table>
+<div class="container my-4 div-print-cash">
+    <div class="row my-2">
+        <div class="col col-md-4 text-center">
+            <img height="60" src="/svg/logo.png" />
+            <p class="mt-4 cash-legend">
+                Vinix Code SAS<br />
+                www.vinixcode.com<br />
+                NIT: 901116567-1<br />
+                Calle 87 Sur # 55-695, Apto. 1603<br />
+                La Estrella, Antioquia<br />
+                Tel: 3282967<br />
+            </p>
+        </div>
 
-        <table class="table table-borderless f-s-c">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Elaboro</th>
-                <th></th>
-                <th></th>
-                <th>Firma y Sello</th>
-                <th></th>
-            </tr>
-        </thead>
-        </table>
+        <div class="col col-md-8">
+            <div class="row mb-2">
+                <div class="text-center">
+                    <h1 class="mb-4">Comprobante de Recibo de Caja</h1>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col col-md-4">
+                    <strong># Caja</strong><br />
+                    {{ $cash_receipt->box_number }}
+                </div>
+
+                <div class="col col-md-4">
+                    <strong>Recibimos De</strong><br />
+                    {{ $cash_receipt->we_received }}
+                </div>
+
+                <div class="col col-md-4">
+                    <strong>Fecha</strong><br />
+                    {{ $cash_receipt->date }}
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col col-md-4">
+                    <strong>Tipo de Documento</strong><br />
+                    {{ $cash_receipt->document_type }}
+                </div>
+
+                <div class="col col-md-4">
+                    <strong>N&uacute;mero de Documento</strong><br />
+                    {{ $cash_receipt->document_number }}
+                </div>
+
+                <div class="col col-md-4">
+                    <strong>Direccion</strong><br />
+                    {{ $cash_receipt->address }}
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col-md-4">
+                    <strong>Valor</strong><br />
+                    $ {{ number_format( $cash_receipt->value) }}
+                </div>
+
+                <div class="col-md-4">
+                    <strong>La suma de</strong><br />
+                    {{ $cash_receipt->value_in_letters }}
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col">
+                    <strong>Descripci&oacute;n</strong><br />
+                    {!! nl2br($cash_receipt->description) !!}s
+                </div>
+            </div>
+
+            <div class="row firmas-show-cash">
+                <div class="col-md-6"><strong>Elaboro</strong></div>
+                <div class="col-md-6"><strong>Firmo y Sello</strong></div>
+            </div>
+        </div>
     </div>
+</div>
 
+<div class="container">
     <div class="footer">
         <a href="{{ route('cash_receipts.index') }}" class="btn btn-warning b-c-e">Volver</a>
         <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-success b-c-e">Editar</a>

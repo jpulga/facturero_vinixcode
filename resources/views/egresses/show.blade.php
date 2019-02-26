@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" media="print" href="/css/egress.css">
+<link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
 @endsection
 
 @section('content')
@@ -19,46 +19,55 @@
                 Tel: 3282967<br />
             </p>
         </div>
+
         <div class="col col-md-8">
             <div class="row mb-2">
                 <div class="text-center">
                     <h1 class="mb-4">Comprobante de Egreso</h1>
                 </div>
             </div>
+
             <div class="row mb-3">
                 <div class="col col-md-4">
                     <strong># Egreso</strong><br />
                     {{$egress->exit_number}}
                 </div>
+
                 <div class="col col-md-4">
                     <strong>Girado A</strong><br />
                     {{ $egress->turned }}
                 </div>
+
                 <div class="col col-md-4">
                     <strong>Fecha</strong><br />
                     {{ $egress->date }}
                 </div>
             </div>
+
             <div class="row my-3">
                 <div class="col col-md-4">
                     <strong>Tipo de Documento</strong><br />
                     {{ $egress->document_type }}
                 </div>
+
                 <div class="col col-md-4">
                     <strong>N&uacute;mero de Documento</strong><br />
                     {{ $egress->document_number }}
                 </div>
+
                 <div class="col col-md-4">
                     <strong>Valor</strong><br />
                     $ {{ number_format($egress->value) }}
                 </div>
             </div>
+
             <div class="row my-3">
                 <div class="col">
                     <strong>La suma de</strong><br />
                     {{ $egress->value_in_letters }}
                 </div>
             </div>
+
             <div class="row my-3">
                 <div class="col">
                     <strong>Descripci&oacute;n</strong><br />
@@ -67,6 +76,12 @@
             </div>
         </div>
     </div>
+
+    <div class="row firmas-show-egress">
+        <div class="col-md-3"><strong>Elaboro</strong></div>
+        <div class="col-md-3"><strong>Aprobo</strong></div>
+        <div class="col-md-3"><strong>Reviso</strong></div>
+        <div class="col-md-3"><strong>Firma y Sello</strong></div>
     </div>
 </div>
 

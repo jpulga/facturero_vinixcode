@@ -7,13 +7,13 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" media="screen" href="/css/app2.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/app.css">
         <title>Facturero - Vinix Code</title>
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="/svg/logo.png" class="logo-navbar" /></a>        
+            <a class="navbar-brand" href="/"><img src="/svg/logo.png" class="logo-navbar" /></a>        
         </div>
     </nav>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -31,7 +31,20 @@
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>Es un documento de carácter mercantil que indica una compraventa de un bien o servicio y, además, incluye toda la información de la operación.</li>
                 </ul>
-                <a href="{{ route('invoices.index') }}" class="btn btn-lg btn-block btn-outline-primary">Mis facturas</a>
+                <a href="{{ route('invoices.index') }}" class="btn btn-lg btn-block btn-outline-primary">Mis Facturas</a>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Recibos de Caja</h4>
+            </div>
+
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Es un soporte de contabilidad en el cual constan los ingresos en efectivo o en cheque recaudados por la empresa.</li>
+                </ul>
+                <a href="{{ route('cash_receipts.index') }}" class="btn btn-lg btn-block btn-primary">Mis Recibos de Caja</a>
             </div>
         </div>
 
@@ -44,20 +57,7 @@
                 <ul class="list-unstyled mt-3 mb-4">
                     <li>Un gasto es un egreso o salida de dinero que una persona o empresa debe pagar para acreditar su derecho sobre un artículo o a recibir un servicio.</li>
                 </ul>
-                <a href="{{ route('egresses.index') }}" class="btn btn-lg btn-block btn-primary">Mis egresos</a>
-            </div>
-        </div>
-
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Recibos de caja</h4>
-            </div>
-
-            <div class="card-body">
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>Es un soporte de contabilidad en el cual constan los ingresos en efectivo o en cheque recaudados por la empresa.</li>
-                </ul>
-                <a href="{{ route('cash_receipts.index') }}" class="btn btn-lg btn-block btn-outline-primary">Mis reibos de caja</a>
+                <a href="{{ route('egresses.index') }}" class="btn btn-lg btn-block btn-outline-primary">Mis Egresos</a>
             </div>
         </div>
     </div>

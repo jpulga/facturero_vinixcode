@@ -3,10 +3,10 @@
 @section('content')
 @include('fragment.info')
 
-<div class="container my-4 d-c-e">
+<div class="container my-4 div-create-egress">
     <div class="px-4 clearfix">
         <div class="float-left">
-            <h3 class="t-c-e">Editar egreso</h3>
+            <h3 class="title-create-egress">Editar Egreso</h3>
         </div>          
     </div>
 </div>

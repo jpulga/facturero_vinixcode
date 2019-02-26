@@ -59,9 +59,9 @@
         <textarea class="form-control" name="description"></textarea>   
     </div>
 
-    <div class="f-c-e">
-        <button type="submit" class="btn btn-primary b-c-c">Crear</button>
-        <a href="{{ route('cash_receipts.index') }}" class="btn btn-danger b-c-c">Cancelar</a>
+    <div class="footer-create-cash">
+        <button type="submit" class="btn btn-primary button-create-cash">Crear</button>
+        <a href="{{ route('cash_receipts.index') }}" class="btn btn-danger button-create-cash">Cancelar</a>
     </div>
 </form>
 

@@ -1,381 +1,383 @@
-body {
-    background: #fff;
+.logo-navbar {
+  height: 30px;
 }
 
-[v-cloak] {
-  display: none;
+@media (max-width: 575.98px) { 
+  .action-buttons {
+    width: 100%;
+  }
 }
 
-.pre {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-family: inherit;
-    font-size: 1em;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
+.navbar{
+  width: 100%;
 }
+
+/*INVOICES*/
+
+@media (min-width: 576px) { 
+  .div-create-invoice {
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 576px) { 
+  .title-create-invoice {
+    color: white;
+  }
+}
+
+@media (max-width: 576px) { 
+  .div-create-invoice {
+    background: black;
+    border-radius: 5px;
+    width: 99%;
+  }
+}
+
+@media (max-width: 576px) { 
+  .title-create-invoice {
+    color: white;
+    padding-top: 2px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .button-create-invoice {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px: 
+  }
+}
+
+.mb{
+  margin-bottom: 10px;
+}
+
+textarea.form-control {
+  height: 132px;
+}
+
+.green {
+  color: #1e7e34;
+}
+
+.red {
+  color: #bd2130;
+}
+
+@media (max-width: 575.98px) { 
+  .button-create-invoice {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px: 
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .button-create-invoice {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px: 
+  }
+}
+
+.footer-firma{
+  text-align: center;
+  padding-top: 10%;
+}
+
+.footer-texto{
+  text-align: center;
+}
+
+@media (min-width: 576px) { 
+  .footer-create-invoice {
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+  }
+}
+
+/*TABLE INVOICES*/
 
 .table-name {
-    width: 55%;
+  width: 55%;
 }
 
 .table-price {
-    width: 15%;
+  width: 15%;
 }
 
 .table-qty {
-    width: 10%;
+  width: 10%;
 }
 
 .table-total {
-    width: 16%;
+  width: 16%;
 }
 
 .table-remove {
-    width: 4%;
-    background: #fff;
-    border-top: 1px solid #fff!important;
-    border-right: 1px solid #fff!important;
-    border-bottom: 1px solid #fff!important;
+  width: 4%;
+  background: #fff;
+  border-top: 1px solid #fff!important;
+  border-right: 1px solid #fff!important;
+  border-bottom: 1px solid #fff!important;
 }
 
 .table-remove-btn {
-    text-align: center;
-    display: block;
-    height: 44px;
-    padding: 12px;
-    font-size: 20px;
-    line-height: 18px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: #fff;
-    color: #C9302C;
-    font-weight: bold;
+  text-align: center;
+  display: block;
+  height: 44px;
+  padding: 12px;
+  font-size: 20px;
+  line-height: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #C9302C;
+  font-weight: bold;
 }
 
 .table-empty {
-    width: 70%;
-    border-left: 1px solid #fff!important;
-    border-bottom: 1px solid #fff!important;
+  width: 70%;
+  border-left: 1px solid #fff!important;
+  border-bottom: 1px solid #fff!important;
 }
 
 .table-label {
-    width: 10%;
-    text-align: right;
+  width: 10%;
+  text-align: right;
 }
 
 .table-amount {
-    width: 16%;
-    text-align: right;
+  width: 16%;
+  text-align: right;
 }
 
 .table-text {
-    text-align: right;
-    display: block;
-    height: 44px;
-    padding: 12px;
-    background: #fff;
+  text-align: right;
+  display: block;
+  height: 44px;
+  padding: 12px;
+  background: #fff;
 }
 
 .table-add_line {
-    text-align: left;
-    cursor: pointer;
-    color: #337AB7;
+  text-align: left;
+  cursor: pointer;
+  color: #337AB7;
 }
 .table-discount {
-    padding: 0!important;
+  padding: 0!important;
 }
 
 .table-discount_input {
-    text-align: right;
-    display: block;
-    width: 100%;
-    height: 44px;
-    padding: 0px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    background-image: none;
-    border: none;
-    border-radius: 0px;
-    outline: none;
-}
-
-.invoice-empty {
-    margin: 100px 0;
-}
-
-.invoice-empty-title {
-    text-align: center;
-}
-
-.error {
-    color: #a94442;
-    margin: 0;
+  text-align: right;
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  outline: none;
 }
 
 .table-error > textarea,
 .table-error > input {
     background: #f2dede;
 }
-/*PRINCIPAL*/
 
-.nav-principal{
-    background: black;
+.table-control {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  outline: none;
+  resize: none;
 }
 
-.container-principal{
-    max-width: 1730px;
+.table-form>tbody>tr>td,
+.table-form>tbody>tr>th,
+.table-form>tfoot>tr>th,
+.table-form>thead>tr>td {
+  padding: 0 0 4px 0;
 }
 
-.green {
-    color: #1e7e34;
+.table-form>tbody>tr {
+  background-color: #f9f9f9;
 }
 
-.red {
-    color: #bd2130;
-}
-/*INVOICES*/
-
-.btn-show-invoices{
-    margin-left: 1360px;
+.table>tfoot>tr>td {
+  height: 44px;
+  padding: 12px;
 }
 
-.div-show-invoices{
-    padding: 8px;
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td  {
+vertical-align: middle;
 }
-
-.div-create-invoices{
-    padding: 8px;
+  
+.table-bordered{
+  border: none;
 }
-
-.div-edit-invoices{
-    padding: 8px;
-}
-
-.buttom-create-invoices{
-    margin-left: 1435px;
-}
-
-.buttom-edit-invoices{
-    margin-left: 1435px;
-}
-
-.firma-invoices{
-    margin-left: 770px;
-    font-weight: bold;
-}
-
-.firma2-invoices{
-    font-weight: bold;
-    text-align: center;
-}
-
-.label-show-invoices{
-    font-weight: bold;
-}
-
-.label-uno-invoices{
-    padding-left: 180px;
-}
-
-.label-dos-invoices{
-    padding-left: 192px;
-}
-
-.label-tres-invoices{
-    padding-left: 135px;
-}
-
-.label-cuatro-invoices{
-    padding-left: 210px;
-}
-
-.label-cinco-invoices{
-    padding-left: 170px;
-}
-
-.label-seis-invoices{
-    padding-left: 195px;
-}
-
-.buscar-invoices{
-    border-radius: 10px;
-}
-
-.img-uno-invoices{
-    margin-left: 100px;
-}
-
-.show-invoices{
-    padding-top: 30px;
-}
-
-
+  
 /*CASH*/
 
-.buttom-create-cash{
-    margin-left: 1390px;
+@media (max-width: 576px) { 
+  .title-create-cash {
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 13%;
+    height: 25px;
+  }
 }
 
-.edit-cash{
-    margin-left: 1120px;
+@media (min-width: 576px) { 
+  .title-create-cash {
+    color: white;
+  }
 }
 
-.div-create-cash{
+@media (max-width: 575.98px) { 
+  .button-create-cash {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px; 
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .button-edit-cash {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px; 
+  }
+}
+
+@media (min-width: 576px) { 
+  .div-create-cash {
+    background: black;
     padding: 8px;
+    border-radius: 5px;
+  }
 }
 
-.div-edit-cash{
+@media (max-width: 576px) { 
+  .div-create-cash {
+    background: black;
+    border-radius: 5px;
+    width: 99%;
+  }
+}
+
+@media (min-width: 576px) { 
+  .footer-create-cash {
+    background: black;
     padding: 8px;
+    border-radius: 5px;
+  }
 }
 
-.label-uno-cash{
-    padding-left: 180px;
+/*TABLE CASH*/
+
+.firmas-show-cash{
+margin-top: 10%;
 }
 
-.label-dos-cash{
-    padding-left: 200px;
+.table-bordered{
+border: none;
 }
 
-.label-tres-cash{
-    padding-left: 135px;
-}
-
-.label-cuatro-cash{
-    padding-left: 210px;
-}
-
-.label-cinco-cash{
-    padding-left: 170px;
-}
-
-.label-seis-cash{
-    padding-left: 195px;
-}
-
-.label-show-cash{
-    font-weight: bold;
-}
-
-.btn-show-cash{
-    margin-left: 1280px;
-}
-
-.img-uno-cash{
-    margin-left: 130px;
-}
-
-.show-cash{
-    margin-left: 450px;
-    margin-top: 120px;
-}
-
-.div-show-cash{
-    padding: 8px;
-}
-
-.buscar-cash{
-    border-radius: 10px;
-}
-
-.show-cash1{
-    padding-top: 30px;
-}
-
-.form-cash{
-    padding-top: 10px;
-}
-
-.documento{
-    width: 150px;
+.table td{
+padding: 10px;
 }
 
 /*EGRESS*/
 
-.div-create-egress{
-    padding: 8px;
-}
-
-.buttom-create-egress{
-    margin-left: 1450px;
-}
-
-.div-edit-egress{
-    padding: 8px;
-}
-
-.form-egress{
-    padding-top: 10px;
-}
-
-.div-show-egress{
-    padding: 8px;
-}
-
-.panel-default-egress{
-    width: 1400px;
-    margin-left: 130px;
-}
-
-.btn-show-egress{
-    margin-left: 1050px;
-}
-
-.label-uno-egress{
-    padding-left: 140px;
-}
-
-.label-dos-egress{
-    padding-left: 180px;
-}
-
-.label-tres-egress{
-    padding-left: 85px;
-}
-
-.label-cuatro-egress{
-    padding-left: 170px;
-}
-
-.label-cinco-egress{
-    padding-left: 132px;
-}
-
-.label-seis-egress{
-    padding-left: 155px;
-}
-
-.label-show-egress{
-    font-weight: bold;
-}
-
-.show-egress1{
-    padding-top: 30px;
-}
-
-.img-uno-egress{
-    margin-left: 110px;
-}
-
-.show-egress{
-    margin-left: 160px;
-    margin-top: 120px;
-}
-
 .descripcion{
-    width: 350px;
+  width: 200px;
 }
 
+@media (min-width: 576px) { 
+  .div-create-egress {
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+  }
+}
 
+@media (min-width: 576px) { 
+  .footer-create-egress {
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+  }
+}
 
+@media (min-width: 576px) { 
+  .title-create-egress {
+    color: white;
+  }
+}
 
+@media (max-width: 576px) { 
+  .div-create-egress {
+    background: black;
+    border-radius: 5px;
+    width: 99%;
+  }
+}
 
+@media (max-width: 576px) { 
+  .title-create-egress {
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 20%;
+    height: 25px;
+  }
+}
 
+@media (max-width: 575.98px) { 
+  .button-create-egress {
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px: 
+  }
+}
 
+/*TABLE EGRESS*/
+
+.firmas-show-egress{
+  margin-top: 10%;
+}
+
+.table-bordered{
+  border: none;
+}
+
+.table td{
+  padding: 10px;
+}
+
+.egresses-legend {
+  font-size: 18px;
+  line-height: 33px;
+}

@@ -5,10 +5,10 @@
 
 <div id="invoice">
     <form action="{{ route('invoices.store') }}" method="POST" class="form-invoice">
-        <div class="container my-4 d-c-i">
+        <div class="container my-4 div-create-invoice">
             <div class="px-4 clearfix">
                 <div class="float-left">
-                    <h3 class="t-c-i">Crear factura</h3>
+                    <h3 class="title-create-invoice">Crear Factura</h3>
                 </div>
             
                 <div class="float-right action-buttons mt-2 mt-sm-0 ml-sm-1">

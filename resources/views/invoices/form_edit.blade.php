@@ -130,7 +130,7 @@
     </table>
 </div>
 
-<div class="f-c-i">
-    <button type="submit" class="btn btn-success b-c-i">Actualizar</button>
-    <a href="{{ route('invoices.index') }}" class="btn btn-danger b-c-i">Cancelar</a>
+<div class="footer-create-invoice">
+    <button type="submit" class="btn btn-success button-create-invoice">Actualizar</button>
+    <a href="{{ route('invoices.index') }}" class="btn btn-danger button-create-invoice">Cancelar</a>
 </div>

@@ -48,9 +48,9 @@
         <textarea class="form-control" name="description">{{ $egress->description }}</textarea>
     </div>
 
-    <div class="f-c-e">
-        <button type="submit" class="btn btn-success b-c-e">Actualizar</button>
-        <a href="{{ route('egresses.index') }}" class="btn btn-danger b-c-e">Cancelar</a>    
+    <div class="footer-create-egress">
+        <button type="submit" class="btn btn-success button-create-egress">Actualizar</button>
+        <a href="{{ route('egresses.index') }}" class="btn btn-danger button-create-egress">Cancelar</a>    
     </div>
 </form>
 

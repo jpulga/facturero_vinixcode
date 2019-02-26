@@ -47,9 +47,9 @@
         <textarea class="form-control" name="description"></textarea>   
     </div>
 
-    <div class="f-c-e">
-        <button type="submit" class="btn btn-primary b-c-e">Crear</button>
-        <a href="{{ route('egresses.index') }}" class="btn btn-danger b-c-e">Cancelar</a>
+    <div class="footer-create-egress">
+        <button type="submit" class="btn btn-primary button-create-egress">Crear</button>
+        <a href="{{ route('egresses.index') }}" class="btn btn-danger button-create-egress">Cancelar</a>
     </div>
 </form>
 
