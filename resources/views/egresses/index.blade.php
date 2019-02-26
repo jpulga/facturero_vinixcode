@@ -13,7 +13,7 @@
         <div class="float-right">
             {!! Form::open(['route' => 'egresses.index', 'method' => 'GET', 'class' => 'form-inline my-2 my-md-0', 'role' => 'search']) !!}
                 <div class="input-group">
-                    {!! Form::text('girado', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
+                    {!! Form::text('Girado', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
                     <div class="input-group-append">
                         <button type="submit" class="input-group-text"><i class="fas fa-search"></i></button>
                     </div>
