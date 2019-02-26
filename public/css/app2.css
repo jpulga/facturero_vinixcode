@@ -15,7 +15,7 @@
 /*INVOICES*/
 
 @media (min-width: 576px) { 
-  .div-create-invoice {
+  .d-c-i {
     background: black;
     padding: 8px;
     border-radius: 5px;
@@ -23,13 +23,21 @@
 }
 
 @media (min-width: 576px) { 
-  .title-create-invoice {
+  .f-c-i {
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 576px) { 
+  .t-c-i {
     color: white;
   }
 }
 
 @media (max-width: 576px) { 
-  .div-create-invoice {
+  .d-c-i {
     background: black;
     border-radius: 5px;
     width: 99%;
@@ -37,7 +45,7 @@
 }
 
 @media (max-width: 576px) { 
-  .title-create-invoice {
+  .t-c-i {
     color: white;
     padding-top: 2px;
     height: 25px;
@@ -45,7 +53,7 @@
 }
 
 @media (max-width: 575.98px) { 
-  .button-create-invoice {
+  .b-c-i {
     width: 100%;
     margin-bottom: 2px;
     margin-top: 2px: 
@@ -69,7 +77,7 @@ textarea.form-control {
 }
 
 @media (max-width: 575.98px) { 
-  .button-create-invoice {
+  .b-c-i {
     width: 100%;
     margin-bottom: 2px;
     margin-top: 2px: 
@@ -77,27 +85,24 @@ textarea.form-control {
 }
 
 @media (max-width: 575.98px) { 
-  .button-create-invoice {
+  .b-c-i {
     width: 100%;
     margin-bottom: 2px;
     margin-top: 2px: 
   }
 }
 
-.footer-firma{
-  text-align: center;
-  padding-top: 10%;
-}
-
-.footer-texto{
+.f-s-i{
   text-align: center;
 }
 
-@media (min-width: 576px) { 
-  .footer-create-invoice {
-    background: black;
-    padding: 8px;
-    border-radius: 5px;
+.f-s-1{
+  margin-top: 10%;
+}
+
+@media (max-width: 575.98px) { 
+  .f-s-1 {
+    margin-top: 30%;
   }
 }
 
@@ -234,38 +239,82 @@ textarea.form-control {
 .table > tfoot > tr > td  {
 vertical-align: middle;
 }
+
+.t-s-i{
+  font-weight: bold;
+  }
   
-.table-bordered{
+  
+  .table-bordered{
   border: none;
-}
+  }
   
+  @media (min-width: 576px) { 
+    .t-s-i-1{
+      margin-left: 20%;
+      }
+    }
+  
+  @media (min-width: 576px) { 
+  .t-s-i-2{
+    margin-left: 23%;
+    }
+  }
+  
+  @media (min-width: 576px) { 
+  .t-s-i-3{
+    margin-left:4%;
+    }
+  }
+  
+  @media (min-width: 576px) { 
+  .t-s-i-4{
+    margin-left: 18%;
+    }
+  }
+  
+  @media (min-width: 576px) { 
+  .t-s-i-5{
+    margin-left: 24%;
+    }
+  }
+  
+  @media (min-width: 576px) { 
+  .i-s-i{
+    width: 40%; 
+    margin-left: 20%;
+    }
+  }
+  
+  @media (max-width: 576px) { 
+  .i-s-i {
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 15%;
+    }
+  }
+  
+
 /*CASH*/
 
 @media (max-width: 576px) { 
-  .title-create-cash {
+  .t-c-c {
     color: white;
     padding-top: 5%;
-    padding-bottom: 13%;
+    padding-bottom: 20%;
     height: 25px;
   }
 }
 
 @media (min-width: 576px) { 
-  .title-create-cash {
+  .t-c-c {
     color: white;
+    padding-top: 7px;
   }
 }
 
 @media (max-width: 575.98px) { 
-  .button-create-cash {
-    width: 100%;
-    margin-bottom: 2px;
-    margin-top: 2px; 
-  }
-}
-
-@media (max-width: 575.98px) { 
-  .button-edit-cash {
+  .b-c-c {
     width: 100%;
     margin-bottom: 2px;
     margin-top: 2px; 
@@ -273,7 +322,7 @@ vertical-align: middle;
 }
 
 @media (min-width: 576px) { 
-  .div-create-cash {
+  .d-c-c {
     background: black;
     padding: 8px;
     border-radius: 5px;
@@ -281,29 +330,71 @@ vertical-align: middle;
 }
 
 @media (max-width: 576px) { 
-  .div-create-cash {
+  .d-c-c {
     background: black;
     border-radius: 5px;
     width: 99%;
   }
 }
 
-@media (min-width: 576px) { 
-  .footer-create-cash {
-    background: black;
-    padding: 8px;
-    border-radius: 5px;
-  }
-}
-
 /*TABLE CASH*/
 
-.firmas-show-cash{
+.t-s-c{
+font-weight: bold;
+}
+
+.f-s-c{
 margin-top: 10%;
 }
 
 .table-bordered{
 border: none;
+}
+
+@media (min-width: 576px) { 
+.t-s-c-1{
+  margin-left: 20%;
+  }
+}
+
+@media (min-width: 576px) { 
+.t-s-c-2{
+  margin-left: 25%;
+  }
+}
+
+@media (min-width: 576px) { 
+.t-s-c-3{
+  margin-left:4%;
+  }
+}
+
+@media (min-width: 576px) { 
+.t-s-c-4{
+  margin-left: 18%;
+  }
+}
+
+@media (min-width: 576px) { 
+.t-s-c-5{
+  margin-left: 25%;
+  }
+}
+
+
+@media (min-width: 576px) { 
+.i-s-c{
+  width: 40%; 
+  margin-left: 20%;
+  }
+}
+
+@media (max-width: 576px) { 
+.i-s-c {
+  width: 80%;
+  margin-left: 6%;
+  margin-top: 15%;
+  }
 }
 
 .table td{
@@ -317,7 +408,7 @@ padding: 10px;
 }
 
 @media (min-width: 576px) { 
-  .div-create-egress {
+  .d-c-e {
     background: black;
     padding: 8px;
     border-radius: 5px;
@@ -325,7 +416,7 @@ padding: 10px;
 }
 
 @media (min-width: 576px) { 
-  .footer-create-egress {
+  .f-c-e {
     background: black;
     padding: 8px;
     border-radius: 5px;
@@ -333,13 +424,13 @@ padding: 10px;
 }
 
 @media (min-width: 576px) { 
-  .title-create-egress {
+  .t-c-e {
     color: white;
   }
 }
 
 @media (max-width: 576px) { 
-  .div-create-egress {
+  .d-c-e {
     background: black;
     border-radius: 5px;
     width: 99%;
@@ -347,7 +438,7 @@ padding: 10px;
 }
 
 @media (max-width: 576px) { 
-  .title-create-egress {
+  .t-c-e {
     color: white;
     padding-top: 5%;
     padding-bottom: 20%;
@@ -356,21 +447,73 @@ padding: 10px;
 }
 
 @media (max-width: 575.98px) { 
-  .button-create-egress {
+  .b-c-e {
     width: 100%;
     margin-bottom: 2px;
     margin-top: 2px: 
   }
 }
 
+
+
 /*TABLE EGRESS*/
 
-.firmas-show-egress{
+.t-s-e{
+  font-weight: bold;
+}
+
+.f-s-e{
   margin-top: 10%;
 }
 
 .table-bordered{
   border: none;
+}
+
+@media (min-width: 576px) { 
+  .t-s-e-1{
+    margin-left: 20%;
+  }
+}
+
+@media (min-width: 576px) { 
+  .t-s-e-2{
+    margin-left: 33%;
+  }
+}
+
+@media (min-width: 576px) { 
+  .t-s-e-3{
+    margin-left:4%;
+  }
+}
+
+@media (min-width: 576px) { 
+  .t-s-e-4{
+    margin-left: 18%;
+  }
+}
+
+@media (min-width: 576px) { 
+  .t-s-e-5{
+    margin-left: 25%;
+  }
+}
+
+
+@media (min-width: 576px) { 
+  .i-s-e{
+    width: 40%; 
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 576px) { 
+  .i-s-e {
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 15%;
+  }
 }
 
 .table td{

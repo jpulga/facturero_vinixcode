@@ -3,19 +3,19 @@
 @section('content')
 @include('fragment.info')
 
-<div id="cash_receipt">
-    <div class="panel panel-default" v-clock>
-        <div class="panel-heading">
-            <div class="clearfix div-edit-cash">
-                <span class="panel-title">Editar Recibo de Caja</span>
-            </div>
-        </div>
-            @include('cash_receipts.form_edit')
+<div class="container my-4 div-create-cash">
+    <div class="px-4 clearfix">
+        <div class="float-left">
+            <h3 class="title-create-cash">Editar Recibo de Caja</h3>
+        </div>          
     </div>
+</div>
+
+<div class="container">       
+    @include('cash_receipts.form_edit')
 </div>
 @endsection
 
 @push('scripts')
     <script src="/js/app.js"></script>
 @endpush
- 

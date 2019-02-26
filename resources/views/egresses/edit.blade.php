@@ -3,15 +3,16 @@
 @section('content')
 @include('fragment.info')
 
-<div id="egresses">
-    <div class="panel panel-default" v-clock>
-        <div class="panel-heading">
-            <div class="clearfix div-edit-egress">
-                <span class="panel-title">Editar Egreso</span>
-            </div>
-        </div>
-            @include('egresses.form_edit')
+<div class="container my-4 div-create-egress">
+    <div class="px-4 clearfix">
+        <div class="float-left">
+            <h3 class="title-create-egress">Editar Egreso</h3>
+        </div>          
     </div>
+</div>
+
+<div class="container">       
+    @include('egresses.form_edit')
 </div>
 @endsection
 

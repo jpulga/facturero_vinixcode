@@ -1,79 +1,81 @@
-<div class="panel-body">
-    @csrf
-    <div class="form-row">
-        <div class="form-group col-md-2">
-            <label>N° de Factura</label>
-            <input type="text" class="form-control" v-model="form.invoice_number" name="invoice_number" value="{{ $count+1 }}">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Cliente</label>
-            <input type="text" class="form-control" v-model="form.client" name="client">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Fecha</label>
-            <input type="date" class="form-control" v-model="form.date" name="date" value="<?= date('Y-m-d') ?>">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Fecha de Vencimiento</label>
-            <input type="date" class="form-control" v-model="form.expiration_date" name="expiration_date" value="<?= date('Y-m-d') ?>">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Tipo de Documento</label>
-            <select class="form-control" v-model="form.document_type" name="document_type">
-                <option value="NIT" selected>Nit</option>
-                <option value="Cedula">Cédula</option>
-            </select>
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Numero de Documento</label>
-            <input type="text" class="form-control" v-model="form.document_number" name="document_number">
-        </div>
+@csrf
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <label>N° de Factura</label>
+        <input type="text" class="form-control" v-model="form.invoice_number" name="invoice_number" value="{{ $count+1 }}">
     </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-3">
-            <label>Direccion</label>
-            <input type="text" class="form-control" v-model="form.address" name="address">
-        </div>
-
-        <div class="form-group col-md-3">
-            <label>Telefono</label>
-            <input type="text" class="form-control" v-model="form.cellphone" name="cellphone">
-        </div>
-
-        <div class="form-group col-md-3">
-            <label>Moneda</label>
-            <select class="form-control" v-model="form.currency" name="currency">
-                <option value="USD" selected>USD (Dolares Americanos)</option>
-                <option value="COP">COP (Pesos Colombianos)</option>
-            </select>
-        </div>
-
-        <div class="form-group col-md-3">
-            <label>Estado</label>
-            <select class="form-control" v-model="form.state" name="state">
-                <option value="Debe" selected>Debe</option>
-                <option value="Paga">Paga</option>
-            </select>
-        </div>
-
-        <div class="form-group col-md-3" hidden>
-            <label>Compañia de Origen</label>
-            <input type="text" class="form-control" v-model="form.company_origin" name="company_origin" value="Vinix Code S.A.S">
-        </div>
+    <div class="form-group col-md-3">
+        <label>Cliente</label>
+        <input type="text" class="form-control" v-model="form.client" name="client">
     </div>
 
-    <div class="mb-3">
-        <label class="text-center">Notas</label>
-        <textarea class="form-control" v-model="form.notes" name="notes"></textarea>
+    <div class="form-group col-md-3">
+        <label>Fecha</label>
+        <input type="date" class="form-control" v-model="form.date" name="date" value="<?= date('Y-m-d') ?>">
     </div>
-    <hr>
 
+    <div class="form-group col-md-3">
+        <label>Fecha de Vencimiento</label>
+        <input type="date" class="form-control" v-model="form.expiration_date" name="expiration_date" value="<?= date('Y-m-d') ?>">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label>Tipo de Documento</label>
+        <select class="form-control" v-model="form.document_type" name="document_type">
+            <option value="NIT" selected>Nit</option>
+            <option value="Cedula">Cédula</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label>Numero de Documento</label>
+        <input type="text" class="form-control" v-model="form.document_number" name="document_number">
+    </div>
+    
+    <div class="form-group col-md-4">
+        <label>Direccion</label>
+        <input type="text" class="form-control" v-model="form.address" name="address">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label>Telefono</label>
+        <input type="text" class="form-control" v-model="form.cellphone" name="cellphone">
+    </div>
+
+    <div class="form-group col-md-4">
+        <label>Moneda</label>
+        <select class="form-control" v-model="form.currency" name="currency">
+            <option value="USD" selected>USD (Dolares Americanos)</option>
+            <option value="COP">COP (Pesos Colombianos)</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label>Estado</label>
+        <select class="form-control" v-model="form.state" name="state">
+            <option value="Debe" selected>Debe</option>
+            <option value="Paga">Paga</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-3" hidden>
+        <label>Compañia de Origen</label>
+        <input type="text" class="form-control" v-model="form.company_origin" name="company_origin" value="Vinix Code S.A.S">
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="text-center">Notas</label>
+    <textarea class="form-control" v-model="form.notes" name="notes"></textarea>
+</div>
+<hr>
+
+<div class="table-responsive">
     <table class="table table-bordered table-form">
         <thead>
             <tr>
@@ -124,9 +126,11 @@
             </tr>
         </tfoot>
     </table>
+</div>
 
-    <div class="panel-footer div-create-egress">
-        <a href="{{ route('invoices.index') }}" class="btn btn-outline-danger">Cancelar</a>
-        <button type="submit" class="btn btn-outline-success">Crear</button>
-    </div>
-</form>
+<div class="footer-create-invoice">
+    <button type="submit" class="btn btn-primary button-create-invoice">Crear</button>
+    <a href="{{ route('invoices.index') }}" class="btn btn-danger button-create-invoice">Cancelar</a>
+</div>
+
+

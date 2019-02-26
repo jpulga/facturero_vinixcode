@@ -1,0 +1,26 @@
+.div-print-cash{
+    margin-top: 20%;
+}
+
+.footer{
+    display: none;
+}
+
+.footer-firma{
+    text-align: center;
+    padding-top: 10%;
+}
+  
+.footer-texto{
+  text-align: center;
+}
+
+.firmas-show-cash{
+    margin-top: 20%;
+    margin-right: 20%;
+}
+  
+.firmas-show-egress{
+    margin-top: 10%;
+    margin: 10%;
+  }

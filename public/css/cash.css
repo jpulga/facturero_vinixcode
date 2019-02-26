@@ -1,41 +1,37 @@
-.panel-heading,
-.navbar {
-  display: none;
-}
+.i-s-c{
+    width: 50%;
+    margin-left: 18%;
+  }
+  
+  .t-s-c-1{
+    margin-left: 18%;
+  }
+  
+  .t-s-c-2{
+    margin-left: 24%;
+  }
+  
+  .t-s-c-3{
+    margin-left: 7%;
+  }
+  
+  .t-s-c-4{
+    margin-left: 14%;
+  }
+  
+  .t-s-c-5{
+    margin-left: 23%;
+  }
+  
+  .t-s-c{
+    font-weight: bold;
+  }
+  
+  .f-s-c{
+    margin-top: 10%;
 
-.panel-default{
-    padding-top: 50px;
-}
-
-.img-uno-cash{
-margin-left: 80px;
-}
-
-.label-uno-cash{
-margin-left: 90px;
-}
-
-.label-dos-cash{
-margin-left: 105px;
-}
-
-.label-tres-cash{
-margin-left: 30px;
-}
-
-.label-cinco-cash{
-margin-left: 80px;
-}
-
-.label-seis-cash{
-margin-left: 100px;
-}
-
-.label-show-cash{
-font-weight: bold;
-}
-
-.label-show{
-    padding-top: 150px;
-    margin-left: 200px;
-}
+  }
+  
+  .footer{
+    display: none;
+  }

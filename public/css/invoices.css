@@ -1,49 +1,43 @@
-.panel-heading,
-.navbar {
-  display: none;
+.i-s-i{
+  width: 50%;
+  margin-left: 16%;
 }
 
-.panel-default{
-  padding-top: 50px;
+.t-s-i-1{
+  margin-left: 18%;
 }
 
-.img-uno-invoices{
-  margin-left: 80px;
+.t-s-i-2{
+  margin-left: 22%;
 }
 
-.label-uno-invoices{
-  margin-left: 90px;
+
+.t-s-i-4{
+  margin-left: 14%;
 }
 
-.label-dos-invoices{
-  margin-left: 100px;
+.t-s-i-5{
+  margin-left: 21%;
 }
 
-.label-tres-invoices{
-  margin-left: 40px;
-}
-
-.label-cinco-invoices{
-  margin-left: 80px;
-}
-
-.label-seis-invoices{
-  margin-left: 100px;
-}
-
-.label-show-invoices{
+.t-s-i{
   font-weight: bold;
 }
 
-.firma-invoices{
-  text-align: center;
-  padding-top: 50px;
+.f-s-1{
+  margin-top: 10%;
+  font-weight: bold;
 }
 
-.firma2-invoices{
+.f-s-i{
   text-align: center;
+
 }
 
-.cortar{
-  width: 140px;
+.table{
+  border: none;
+}
+
+.footer{
+  display: none;
 }

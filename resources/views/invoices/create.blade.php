@@ -5,18 +5,23 @@
 
 <div id="invoice">
     <form action="{{ route('invoices.store') }}" method="POST" class="form-invoice">
-        <div class="panel panel-default" v-clock>
-            <div class="panel-heading">
-                <div class="clearfix div-create-invoices">
-                    <span class="panel-title">Crear Factura</span>
-                    <a href="{{ route('invoices.index') }}" class="btn btn-outline-warning buttom-create-invoices">Volver</a>
+        <div class="container my-4 div-create-invoice">
+            <div class="px-4 clearfix">
+                <div class="float-left">
+                    <h3 class="title-create-invoice">Crear Factura</h3>
                 </div>
+            
+                <div class="float-right action-buttons mt-2 mt-sm-0 ml-sm-1">
+                    <a href="{{ route('invoices.index') }}" class="btn btn-warning d-none d-sm-block">Volver</a>
+                </div>            
             </div>
+        </div>
 
+        <div class="container">
             @include('invoices.form')
         </div>
     </form>
-</div>
+</div> 
 @endsection
 
 @push('scripts')
