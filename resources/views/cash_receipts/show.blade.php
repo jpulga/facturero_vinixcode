@@ -94,7 +94,7 @@
         <a href="{{ route('cash_receipts.edit', $cash_receipt->id) }}" class="btn btn-success b-c-e">Editar</a>
 
         <form class="form d-md-inline-block" method="post" action="{{route('cash_receipts.destroy', $cash_receipt)}}"
-                    onsubmit="return confirm('¿Estas seguro de borrar el egreso #{{$cash_receipt->box_number}}?')">
+                    onsubmit="return confirm('¿Estas seguro de borrar el recibo #{{$cash_receipt->box_number}}?')">
             <input type="hidden" name="_method" value="delete">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <button title="Borrar Recibo" type="submit" class="btn btn-danger b-c-e">Borrar</button>
