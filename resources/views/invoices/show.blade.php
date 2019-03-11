@@ -98,9 +98,9 @@
                     @foreach($invoice->products as $product)
                         <tr>
                             <td class="table-name">{{$product->name}}</td>
-                            <td class="table-price">$ {{ number_format ($product->price)}}</td>
+                            <td class="table-price">${{ number_format ($product->price)}}</td>
                             <td class="table-qty">{{$product->qty}}</td>
-                            <td class="table-total text-right">$ {{ number_format ($product->qty * $product->price)}}</td>
+                            <td class="table-total text-right">${{ number_format ($product->qty * $product->price)}}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -108,17 +108,17 @@
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Subtotal</td>
-                        <td class="table-amount text-right">$ {{ number_format ($invoice->sub_total)}}</td>
+                        <td class="table-amount text-right">${{ number_format ($invoice->sub_total)}}</td>
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Descuento</td>
-                        <td class="table-amount text-right">$ {{$invoice->discount}}</td>
+                        <td class="table-amount text-right">${{$invoice->discount}}</td>
                     </tr>
                     <tr>
                         <td class="table-empty" colspan="2"></td>
                         <td class="table-label">Total a Pagar</td>
-                        <td class="table-amount text-right">$ {{ number_format ($invoice->grand_total)}}</td>
+                        <td class="table-amount text-right">${{ number_format ($invoice->grand_total)}}</td>
                     </tr>
                 </tfoot>
             </table>

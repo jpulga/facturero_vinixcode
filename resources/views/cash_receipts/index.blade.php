@@ -52,7 +52,7 @@
                     <td>{{$cash_receipt->document_type}}</td>
                     <td>{{$cash_receipt->document_number}}</td>
                     <td>{{$cash_receipt->date}}</td>
-                    <td>$ {{ number_format ($cash_receipt->value) }}</td>
+                    <td>${{ number_format ($cash_receipt->value) }}</td>
                     <td>{{$cash_receipt->description}}</td>
                     <td>{{$cash_receipt->created_at->diffForHumans()}}</td>
                     <td>

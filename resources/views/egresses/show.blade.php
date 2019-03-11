@@ -57,7 +57,7 @@
 
                 <div class="col col-md-4">
                     <strong>Valor</strong><br />
-                    $ {{ number_format($egress->value) }}
+                    ${{ number_format($egress->value) }}
                 </div>
             </div>
 

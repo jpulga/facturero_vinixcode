@@ -64,7 +64,7 @@
             <div class="row my-3">
                 <div class="col-md-4">
                     <strong>Valor</strong><br />
-                    $ {{ number_format( $cash_receipt->value) }}
+                    ${{ number_format( $cash_receipt->value) }}
                 </div>
 
                 <div class="col-md-4">

@@ -51,7 +51,7 @@
                 <td>{{$invoice->date}}</td>
                 <td>{{$invoice->expiration_date}}</td>
                 <td>{!! $invoice->state == 'Paga' ? '<span class="green">Paga</span>' : '<span class="red">Debe</span>' !!}</td>
-                <td>$ {{ number_format($invoice->grand_total)}}</td>
+                <td>${{ number_format($invoice->grand_total)}}</td>
                 <td>{{$invoice->created_at->diffForHumans()}}</td>
                 <td>
                     <a title="Ver Factura" href="{{ route('invoices.show', $invoice) }}" class="btn btn-outline-dark btn-sm"><i class="far fa-file-pdf"></i></a>

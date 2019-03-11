@@ -52,7 +52,7 @@
                     <td>{{$egress->document_type}}</td>
                     <td>{{$egress->document_number}}</td>
                     <td>{{$egress->date}}</td>
-                    <td>$ {{ number_format ($egress->value) }}</td>
+                    <td>${{ number_format ($egress->value) }}</td>
                     <td>{{$egress->description}}</td>
                     <td>{{$egress->created_at->diffForHumans()}}</td>
                     <td>
