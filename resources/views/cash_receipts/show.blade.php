@@ -76,7 +76,7 @@
             <div class="row my-3">
                 <div class="col">
                     <strong>Descripci&oacute;n</strong><br />
-                    {!! nl2br($cash_receipt->description) !!}s
+                    {!! nl2br($cash_receipt->description) !!}
                 </div>
             </div>
 
